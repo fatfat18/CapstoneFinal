@@ -10,7 +10,7 @@
 
       <style>
         .container {
-          height: 100%;
+          height: 95.5%;
           width: 100%;
           background-color: rgb(241, 221, 221);
           display: flex;
@@ -21,99 +21,237 @@
         }
 
         .mainpage {
-          height: 300px;
-          width: 300px;
-          background-color: black;
-          padding: 50px;
+          height: 100%;
+          width: 70%;
+          background-color: white;
           justify-content:center;
           align-items:center;
           text-align:center;
-          border-radius:50px;
           padding-top:9vh;
-          border:ridge 10px;
+          
         
         }
 
-        .input {
-              width: 250px;
-              height: 50px;
-              border: 2px solid transparent;
-              outline: none;
-              border-bottom: 2px solid #3f3f3f;
-              caret-color: black;
-              background-color: black;
-              padding: 10px;
-              transition: .5s linear;
-              font-family: monospace;
-              letter-spacing: 1px;
-              text-align: center;
-              font-size: 15px;
-              margin-bottom: 5px;
-              color: white;
-              }
+        
 
-              .input:focus {
-                border: 2px solid #fa4753;
-                caret-color: #fa4753;
-                color: #fa4753;
-                box-shadow: 4px 4px 10px red;
-              }
+        .logintitle {
+          color: black; 
+          letter-spacing: 1px; 
+          padding-top: 25vh;
+          font-size: 6vh;
+          font-family: century gothic;
 
-              .input:focus::placeholder {
-                color: #fa4753;
-                            }
-             
-
-
-
+        }
         .button {
-              width: 9em;
-              position: relative;
-              height: 3em;
-              border: 3px ridge white;
-              outline: none;
-              background-color: transparent;
-              color: white;
-              transition: 1s;
-              border-radius: 0.3em;
-              font-size: 14px;
-              font-weight: bold;
-              
-                 }
-             
-      .button::after {
-               content: "";
-               position: absolute;
-               top: -10px;
-               left: 3%;
-               width: 95%;
-               height: 40%;
-               background-color:black;
-               transition: 0.5s;
-               transform-origin: center;
-             }
-             
-      .button::before {
-               content: "";
-               transform-origin: center;
-               position: absolute;
-               top: 80%;
-               left: 3%;
-               width: 95%;
-               height: 40%;
-               background-color: black;
-               transition: 0.5s;
-             }
-             
-      .button:hover::before, button:hover::after {
-               transform: scale(0)
-             }
-             
-      .button:hover {
-               box-shadow: inset 0px 0px 25px #ffffff;
-               color: white;
-             }
+         padding: 0.8em 1.8em;
+         border: 2px solid #ff0000;
+         position: relative;
+         overflow: hidden;
+         background-color: transparent;
+         text-align: center;
+         text-transform: uppercase;
+         font-size: 16px;
+         transition: .3s;
+         z-index: 1;
+         font-family: inherit;
+         color: #ff0000;
+         height: 50px;
+         width: 150px;
+        }
 
+        .button::before {
+         content: '';
+         width: 0;
+         height: 300%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%) rotate(45deg);
+         background: rgb(248, 60, 60);
+         transition: .5s ease;
+         display: block;
+         z-index: -1;
+        }
+
+        .button:hover::before {
+         width: 105%;
+        }
+
+        .button:hover {
+          color: white;
+        }
+
+        .inputbox2 {
+              position: relative;
+              width: 500px;
+              margin-bottom: 20px;
+              font-family: century gothic;
+              font-size: 30px;
+              letter-spacing: 4px;
+            }
+            
+            .inputbox2 input {
+              position: relative;
+              width: 100%;
+              padding: 20px 10px 10px;
+              background: transparent;
+              outline: none;
+              box-shadow: none;
+              border: none;
+              color: white;
+              font-size: .7em;
+              letter-spacing: 0.05em;
+              transition: 0.5s;
+              z-index: 10;
+              letter-spacing: 2px;
+            }
+            
+            .inputbox2 span {
+              position: absolute;
+              left: 0;
+              padding: 20px 10px 10px;
+              font-size: .7em;
+              color: #8f8f8f;
+              letter-spacing: 00.05em;
+              transition: 0.5s;
+              pointer-events: none;
+            
+            }
+            
+            .inputbox2 input:valid ~span,
+            .inputbox2 input:focus ~span {
+              color: black;
+              transform: translateX(-10px) translateY(-40px);
+              font-size: .1em;
+              font-size: 25px;
+            }
+            
+            .inputbox2 i {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: rgb(255, 92, 92);
+              border-radius: 4px;
+              transition: 0.5s;
+              pointer-events: none;
+              z-index: 9;
+            }
+            
+            .inputbox2 input:valid ~i,
+            .inputbox2 input:focus ~i {
+              height: 44px;
+            }
+
+
+
+        
+        /* .inputGroup {
+          width: 500px;
+          height: 50px;
+          margin-bottom: 20px;
+          border-radius: 30px ;
+          font-family: century gothic;
+          font-size: 15px;
+          padding-left: 20px;
+          background-color: #f7eeed;
+        } */
+        .inputbox {
+              position: relative;
+              width: 500px;
+              margin-bottom: 30px;
+              font-family: century gothic;
+              font-size: 20px;
+              letter-spacing: 4px;
+            }
+
+            .inputbox input {
+              position: relative;
+              width: 100%;
+              padding: 20px 10px 10px;
+              background: transparent;
+              outline: none;
+              box-shadow: none;
+              border: none;
+              color: white;
+              font-size: 1em;
+              letter-spacing: 0.05em;
+              transition: 0.5s;
+              z-index: 10;
+              letter-spacing: 2px;
+            }
+
+            .inputbox span {
+              position: absolute;
+              left: 0;
+              padding: 20px 10px 10px;
+              font-size: 1em;
+              color: #8f8f8f;
+              letter-spacing: 00.05em;
+              transition: 0.5s;
+              pointer-events: none;
+            }
+
+            .inputbox input:valid ~span,
+            .inputbox input:focus ~span {
+              color: black;
+              transform: translateX(-10px) translateY(-40px);
+              font-size: .1em;
+              font-size: 25px;
+            }
+
+            .inputbox i {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: rgb(255, 92, 92);
+              border-radius: 4px;
+              transition: 0.5s;
+              pointer-events: none;
+              z-index: 9;
+            }
+
+            .inputbox input:valid ~i,
+            .inputbox input:focus ~i {
+              height: 44px;
+            }
+
+
+            .logincontent{
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              padding-left: 22vw;
+
+            
+            
+          }
+
+
+          .subpage {
+          height: 100%;
+          width: 30%;
+          background-color: blue;
+          padding-top:9vh;
+          font-family: century gothic;
+          display: flex;
+        
+    
+        }
+        .subpagecontent{
+          height: 500px;
+          width: 100%;
+          padding-top: 20vh;
+          background-color: aqua;
+          justify-content:center;
+          align-items:center;
+          text-align:center;
+          margin: 50px;
+          letter-spacing: .2px;
+        }
 
 
 
@@ -132,19 +270,42 @@
 
     <div class="container">
 
-        <div class="mainpage">
 
-          <h2 style="color: white; letter-spacing: 2px;">Login</h2> {{ msg }}
+        <div class="mainpage">  
+
+          <h2 class="logintitle">Login to Your SafeSight Account</h2> {{ msg }}
           <form method="post">
             {% csrf_token %}
-             <input class="input" type="text" placeholder="Username" name="username">
-             <input class="input" type="password" placeholder="Password" name="password">
 
-            
-            <button type="submit" class="button" style="margin-top: 20px ;">Login</button>
+      <div class="logincontent">
+
+             <div class="inputbox">
+             <input type="text"  name="username"  required=""  autocomplete="off"><span>Username</span>
+             <i></i>
+            </div>
+
+            <div class="inputbox2">
+             <input type="password" name="password" required="" autocomplete="off"><span>Password</span>
+             <i></i>
+            </div>
+      </div>
+            <button type="submit" class="button" >Login</button>
           </form>
-        
-        
+
+        </div>
+
+        <div class="subpage">
+
+
+              <div class="subpagecontent">
+                <h1 style="font-size:50px;"> New Here? </h1>
+                <h6 style="font-size:20px;"> Sign Up and Start Securing your home with us now! We use IoT-based Home Security with Facial Recognition! </h6>
+                <button > <a href="/signup" style="text-decoration:none;">REGISTER</a>  </button>
+              </div>
+
+              
+
+
 
 
         </div>
