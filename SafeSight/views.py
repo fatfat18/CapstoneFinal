@@ -4,6 +4,11 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.shortcuts import HttpResponseRedirect
+
+
+
+
+
   
 def signup(request):
     if request.user.is_authenticated:
@@ -36,7 +41,7 @@ def signin(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/profile') #profile
+            return redirect('/dashboard') #profile
         else:
             msg = 'Error Login'
             form = AuthenticationForm(request.POST)
@@ -54,3 +59,6 @@ def signout(request):
 
 def aboutus(request): 
     return render(request, 'aboutus.html')
+
+def dashboard(request): 
+    return render(request, 'dashboard.html')

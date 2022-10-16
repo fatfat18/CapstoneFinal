@@ -1,0 +1,61 @@
+
+{% block content %}
+
+{% if user.is_authenticated %}
+   Hi {{ user.username }}!
+   <a href="/signout" class="btn btn-danger">Logout</a>
+ {% else %}
+  
+
+   
+ {% endif %}
+{% endblock %}
+
+
+<html>
+<head>
+<style>
+            body {
+                font-family: century-gothic;
+                background-repeat:no-repeat;
+                background-size: 100% 100%;
+            }
+            .container {
+                height:82vh;
+            }
+        </style>
+        </head>
+<body>
+
+<div class=" ">
+    
+
+    <div class="flex items center justify-center">
+            <div class="text-2xl font-family:century;">
+                Welcome to
+            </div>
+                    <div class="ml-2 text-2xl font-family:century; text-red-600 font-semibold">
+                        SafeSight 
+                    </div>
+                <div class="ml-2 text-2xl font-family:century;">
+                    Home Security
+                </div>
+     </div>  
+
+
+     <div class="p-6 bg-white border-gray-200 justify-center items-center">
+ 
+
+
+  
+</div>
+
+
+
+
+        </body>
+</html>
+
+
+
+
