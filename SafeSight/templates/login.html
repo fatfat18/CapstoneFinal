@@ -45,26 +45,30 @@
 
         }
         .button {
-         padding: 0.8em 1.8em;
+         padding: -0.8em 1.8em;
          border: 2px solid #ff0000;
          position: relative;
          overflow: hidden;
          background-color: transparent;
          text-align: center;
          text-transform: uppercase;
-         font-size: 16px;
+         font-size: 20px;
+         font-weight: 1000;
          transition: .3s;
          z-index: 1;
          font-family: inherit;
          color: #ff0000;
          height: 50px;
-         width: 150px;
+         width: 500px;
+         font-family: century gothic;
+         letter-spacing: 3px;
+         
         }
 
         .button::before {
          content: '';
          width: 0;
-         height: 300%;
+         height: 1000%;
          position: absolute;
          top: 50%;
          left: 50%;
@@ -86,7 +90,7 @@
         .inputbox2 {
               position: relative;
               width: 500px;
-              margin-bottom: 20px;
+              margin-bottom: 40px;
               font-family: century gothic;
               font-size: 30px;
               letter-spacing: 4px;
@@ -134,7 +138,7 @@
               bottom: 0;
               width: 100%;
               height: 2px;
-              background: rgb(255, 92, 92);
+              background: rgb(255, 0, 0);
               border-radius: 4px;
               transition: 0.5s;
               pointer-events: none;
@@ -209,7 +213,7 @@
               bottom: 0;
               width: 100%;
               height: 2px;
-              background: rgb(255, 92, 92);
+              background: rgb(255, 0, 0);
               border-radius: 4px;
               transition: 0.5s;
               pointer-events: none;
@@ -320,7 +324,7 @@
 
           <h2 class="logintitle">Login to Your 
     
-            <a href="/"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                viewBox="-1500 240 4999 580" style="enable-background:new 0 0 1920 1080; font-family: century othic;" xml:space="preserve">
             <style type="text/css">
               .st0{font-family:'CenturyGothic-Bold';}
@@ -332,7 +336,7 @@
               .st6{fill:#FA100C;}
               .st7{fill:#F8F5F4;}
             </style>
-            <text transform="matrix(1.1344 0 0 1 -2.6523 698.0746)" class="st0 st1" style="font-family: Century Gothic;">SafeSight</text>
+            <a href="/"><text transform="matrix(1.1344 0 0 1 -2.6523 698.0746)" class="st0 st1" style="font-family: Century Gothic;">SafeSight</text></a>
             <ellipse class="st2" cx="1188.3" cy="443.5" rx="39.5" ry="40.5"/>
             <g id="Layer_2_00000092421402671916122210000006279272406044781740_">
               <g id="Layer_1-2">
@@ -363,9 +367,9 @@
               </g>
             </g>
             </svg>
-          </a>
+          
                     
-            Account</h2> {{ msg }}
+            Account</h2> <h2 style="color:red; font-family: century gothic;font-size:20px; letter-spacing: 1px; font-weight:1000;" >{{ msg }} </h2>
           <form method="post">
             {% csrf_token %}
 

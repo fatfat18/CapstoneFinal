@@ -10,42 +10,45 @@ from django.shortcuts import HttpResponseRedirect
 
 
 
-
   
 def signup(request):
     if request.user.is_authenticated:
-        return redirect('/')
+        return redirect('/profile')
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
+            user = authenticate(username=username, password=password, email=email)
             login(request, user)
             return redirect('/')
         else:
-            return render(request, 'signup.html', {'form': form})
+            msg = 'Please fill in the blanks properly!'
+            return render(request, 'signup.html', {'form': form , 'msg': msg})
     else:
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
-   
+
+
+
 def home(request): 
-    return render(request, 'home.html')
+        return render(request, 'home.html')
    
   
 def signin(request):
     if request.user.is_authenticated:
         return render(request, 'home.html')
     if request.method == 'POST':
-        username = request.POST['username']
+        username = request.POST['username'] 
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('/dashboard') #profile
         else:
-            msg = 'Error Login'
+            msg = 'Invalid Details'
             form = AuthenticationForm(request.POST)
             return render(request, 'login.html', {'form': form, 'msg': msg})
     else:
