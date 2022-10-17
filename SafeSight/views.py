@@ -57,7 +57,7 @@ def profile(request):
    
 def signout(request):
     logout(request)
-    return redirect('/')
+    return redirect('/signin')
 
 def aboutus(request): 
     return render(request, 'aboutus.html')
