@@ -9,7 +9,7 @@ class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(label='Username', min_length=3, max_length=150)
     email = forms.EmailField(label='Email')  
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)  
-    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)  
   
     def username_clean(self):  
         username = self.cleaned_data['username'].lower()  

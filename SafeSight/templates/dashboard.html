@@ -1,17 +1,4 @@
 
-{% block content %}
-
-{% if user.is_authenticated %}
-   Hi {{ user.username }}!
-   <a href="/signout" class="btn btn-danger">Logout</a>
- {% else %}
-  
-
-   
- {% endif %}
-{% endblock %}
-
-
 <html>
 <head>
 <style>
@@ -19,25 +6,339 @@
                 font-family: century-gothic;
                 background-repeat:no-repeat;
                 background-size: 100% 100%;
+                margin: 0;
             }
             .container {
                 height:82vh;
             }
+            .mainpage {
+
+                width: 100%;
+                height: 100vh;
+                background-color: rgb(252, 199, 199);
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                
+            }
+            .sidebar {
+
+                height: 90%;
+                width: 30%;
+                background-color: rgb(25, 26, 26);
+                padding: 20px;
+                margin: 10px;
+                border-radius: 20px ;
+                margin-left: 50px;
+            }
+            .contents {
+
+            height: 90%;
+            width: 70%;
+            background-color: rgb(253, 253, 227);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 20px ;
+            margin-right: 50px;
+            }
+            .userinfo{
+
+                font-size: 50px;
+                font-family: century gothic;
+                padding-left: 170px;
+                color: white;
+               
+
+            }
+            .profpicture {
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 20px;
+                margin-bottom: 20px;
+                
+            }
+            .options {
+
+                height: 35%;
+                width: 100%;
+                background-color: brown;
+                border: solid 1px;
+                margin-top: 120px;
+                
+
+              
+             
+            }
+
+            .option-list {
+
+                height: 35%;
+                width: 100%;
+                background-color: white;
+                border: solid 1px;
+                text-align: center;
+                justify-content: center;
+                font-family: century gothic;
+                font-size: 40px;
+                
+               
+                }
+
+
+
+
+                .buttonlogout {
+                 --color: #ad0b0b;
+                 font-family: inherit;
+                 display: inline-block;
+                 width: 8em;
+                 height: 2.6em;
+                 line-height: 2.5em;
+                 margin: 20px;
+                 position: relative;
+                 overflow: hidden;
+                 border: 2px solid var(--color);
+                 transition: color .5s;
+                 z-index: 1;
+                 font-size: 17px;
+                 border-radius: 6px;
+                 font-weight: 500;
+                 color: var(--color);
+                 font-family: century gothic;
+                 margin-top: 170px;
+                 margin-left: 170px;
+                }
+                
+                .buttonlogout:before {
+                 content: "";
+                 position: absolute;
+                 z-index: -1;
+                 background: var(--color);
+                 height: 150px;
+                 width: 200px;
+                 border-radius: 50%;
+                }
+                
+                .buttonlogout:hover {
+                 color: #fff;
+                }
+                
+                .buttonlogout:before {
+                 top: 100%;
+                 left: 100%;
+                 transition: all .7s;
+                }
+                
+                .buttonlogout:hover:before {
+                 top: -30px;
+                 left: -30px;
+                }
+                
+                .buttonlogout:active:before {
+                 background: #a30c0c;
+                 transition: background 0s;
+                }
+
+                .metrics {
+
+                    height: 200px;
+                    width: 97%;
+                    display: flex;
+                    padding: 20px;
+                    border-radius: 40px;
+                    font-family: century gothic;
+                    font-size: 20px;
+                    font-weight: 1000;
+
+                    
+                }
+
+                .metric1 {
+
+                height: 150px;
+                width: 50%;
+                display: flex;
+                background-color: white;
+                margin-left: 20px;
+                margin-right: 40px;
+                border-radius: 20px;
+                justify-content: center;
+                padding-top: 50px;
+               
+
+                }
+                .metric2 {
+
+                height: 150px;
+                width: 50%;
+                display: flex;
+                background-color:white;
+                margin-right: 40px;
+                margin-left: 20px;
+                border-radius: 20px;
+                justify-content: center;
+                padding-top: 50px;
+
+                                
+                }
+                .dashboardcontainer {
+                height: 60%;
+                width: 98%;
+               
+                background-color:white;
+                margin-right: 40px;
+                margin-left: 20px;
+                border-radius: 20px;
+                justify-content: center;
+                padding-top: 100px;
+                font-family: century gothic;
+                font-size: 20px;
+                font-weight: 1000;
+
+                }
+
+                .dashboardcontents {
+                height: 10%;
+                width: 98%;
+                margin-top: 10px;
+                background-color:rgb(189, 178, 178);
+                margin-right: 40px;
+                margin-left: 20px;
+                border-radius: 20px;
+                justify-content: center;
+                padding-top: 40px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                }
+
+
         </style>
         </head>
 <body>
 
 
-
-        <h1 style="font-family: century gothic; font-size:100px"> 
-            DASHBOARD NI SYA HA WALA PAY DATA kay waiting pamis IOT namo! HAHAHAHAHAHA MWAMWA
-
-        </h1>
+        <div class="mainpage"> 
 
 
+            <div class="sidebar">
+
+                <div class="profpicture">
+                    PROFILE PIC
+                </div>
+
+            
+                <div class="userinfo">{% block content %}
+
+                    {% if user.is_authenticated %}
+                        Hi {{ user.username }}
+                       
+                     {% else %}
+    
+                     {% endif %}
+                     {% endblock %}
+                     </div>
+                    <div class="options">
+                    
+                        <div class="option-list">
+                            option 1
+                        </div>
+                        <div class="option-list">
+                            option 2
+                        </div>
+                        <div class="option-list">
+                            option 3
+                        </div>  
 
 
 
+                    </div>
+                
+
+                 
+                
+                
+                
+
+
+
+                     <a href="/signout" ><button class="buttonlogout">LOGOUT</button></a>
+                    
+            </div>
+            <div class="contents">
+
+                    <div class="metrics">
+
+                        <div class="metric1">
+                            TOTAL NUMBERS OF REPORTS
+                          
+
+                        </div>
+                        <div class="metric2">
+                            REPORT COUNT FOR THE MONTH
+                            
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="dashboardcontainer">
+
+                            <div class="dashboardcontents">
+
+                                    REPORTS
+
+                            </div>
+                            <div class="dashboardcontents">
+
+                                REPORTS
+
+                        </div>
+                        <div class="dashboardcontents">
+
+                            REPORTS
+
+                    </div>
+                    <div class="dashboardcontents">
+
+                        REPORTS
+
+                </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+       
 
 
 
