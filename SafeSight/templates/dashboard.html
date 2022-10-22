@@ -28,7 +28,7 @@
                 background: rgba(255,255,255,0.35);
 -webkit-backdrop-filter: blur(1px);
 backdrop-filter: blur(1px);
-border: 1px solid rgba(255,255,255,0.175);
+border: 1px solid rgb(0, 0, 0);
                 padding: 20px;
                 margin: 10px;
                 border-radius: 20px ;
@@ -270,7 +270,7 @@ border: 1px solid rgba(255,255,255,0.175);
                 .dashboardcontents {
                 height: 10%;
                 width: 92%;
-                margin-top: 2px;
+                margin-top: 5px;
                 background: rgba(255,255,255,0.9);
 -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(1px);
@@ -285,6 +285,35 @@ border: 1px solid rgba(255,255,255,0.45);
                 align-items: center;
                 text-align: center;
                 }
+
+                .dashboardcontents {
+ letter-spacing: 1px;
+ font-size: 1.1em;
+ cursor: pointer;
+ background: rgba(0,0,0,0.7);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border: 1px solid white;
+ color: #fff;
+ border-radius: 5px;
+ transition: all .3s;
+}
+
+.dashboardcontents:hover {
+ border-radius: 5px;
+ transform: translateY(-10px);
+ box-shadow: 0 7px 0 -2px #f85959,
+  0 15px 0 -4px #39a2db,
+  0 16px 10px -3px #39a2db;
+}
+
+.dashboardcontents:active {
+ transition: all 0.2s;
+ transform: translateY(-5px);
+ box-shadow: 0 2px 0 -2px #f85959,
+  0 8px 0 -4px #39a2db,
+  0 12px 10px -3px #39a2db;
+}
 
 
 
@@ -357,12 +386,12 @@ border: 1px solid rgba(255,255,255,0.45);
                     <div class="metrics">
 
                         <div class="metric1">
-                            TOTAL NUMBERS OF REPORTS  <br> <h1 style="color:red;"> 200 </h1>
+                            TOTAL NUMBERS OF REPORTS  <br> <h1 style="color:red;"> 153 </h1>
                           
 
                         </div>
                         <div class="metric2">
-                            REPORT COUNT FOR THE MONTH<br> <h1 style="color:red;"> 23</h1>
+                            REPORT COUNT FOR THE MONTH<br> <h1 style="color:red;"> 14</h1>
                             
                         </div>
 
