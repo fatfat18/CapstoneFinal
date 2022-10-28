@@ -26,16 +26,15 @@ def signup(request):
               email = form.cleaned_data.get('email')
               password = form.cleaned_data.get('password1')
               user = authenticate(username=username, password=password, email=email)
-              login(request, user)
-              if request.user.is_authenticated:
-                 return redirect('/profile')
+              msg = 'Registered Successfully!'
+              form = CustomUserCreationForm()
+              return render(request, 'signup.html', {'form': form , 'msg': msg})
           else:
               msg = 'Please fill in the blanks properly!'
               return render(request, 'signup.html', {'form': form , 'msg': msg})
       else:
           form = CustomUserCreationForm()
           return render(request, 'signup.html', {'form': form})
-
 
 
 
