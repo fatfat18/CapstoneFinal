@@ -38,5 +38,5 @@ class CustomUserCreationForm(UserCreationForm):
             self.cleaned_data['username'],  
             self.cleaned_data['email'],  
             self.cleaned_data['password1']  
-        )  
+        )
         return user  

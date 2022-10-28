@@ -48,8 +48,8 @@ def signin(request):
     if request.user.is_authenticated:
         return render(request, 'home.html')
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST['username'].lower()
+        password = request.POST['password'].lower()
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
