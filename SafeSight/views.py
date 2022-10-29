@@ -75,3 +75,6 @@ def aboutus(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html')
+
+def reportcontents(request):
+    return render(request, 'reportcontents.html')

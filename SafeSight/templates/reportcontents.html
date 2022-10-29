@@ -1,0 +1,588 @@
+
+<html>
+    <head>
+    <style>
+                body {
+                    font-family: century-gothic;
+                    background: url("/static/img/signupback.jpg")  no-repeat fixed;
+                    background-repeat:no-repeat;
+                    background-size: 100% 100%;
+                    margin: 0;
+                }
+                .container {
+                    height:82vh;
+                }
+                .mainpage {
+    
+                    width: 100%;
+                    height: 100vh;
+                    display: flex;
+                    justify-content:center;
+                    align-items: center;
+                    
+                }
+                .sidebar {
+    
+                    height: 90%;
+                    width: 20%;
+                    background: rgba(255,255,255,0.35);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgb(0, 0, 0);
+                    padding: 20px;
+                    margin: 10px;
+                    border-radius: 20px ;
+                    margin-left: 50px;
+                }
+                .contents {
+    
+                height: 90%;
+                width: 70%;
+                background:black;
+                
+                padding: 20px;
+                margin: 10px;
+                border-radius: 20px ;
+                margin-right: 50px;
+                }
+                .userinfo{
+                    height: 100px;
+                    font-size: 50px;
+                    font-family: century gothic;
+                    color: black;
+                    font-weight: 1000;
+                    text-align: center;
+                    padding: 20px;
+                    margin-left: 5px;
+                    padding-top: 10px;
+                
+                }
+    
+                .profpicture {
+                    width: 100px;
+                    height: 100px;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    border-radius: 20px;
+                    margin-bottom: 20px;
+                    font-family: century gothic;
+                    font-weight: 1000;
+        
+                          
+               }
+    
+               .accountpane{
+                    display: flex;
+                    width: 100%;
+                   
+                    height: 200px;
+                 
+                    }
+    
+    
+    
+    
+    
+    
+                .options {
+    
+                    height: 20%;
+                    width: 100%;
+                    
+                    border: solid 1px;
+                    margin-top: 120px;
+                    display: block;
+                    margin-bottom: 100px;
+                    border: 0px;
+                    
+    
+                  
+                 
+                }
+    
+                .option-list {
+    
+                    height: 30%;
+                    width: 100%;
+                    background-color: white;
+                    border: solid 1px;
+                    text-align: center;
+                    justify-content: center;
+                    font-family: century gothic;
+                    font-size: 25px;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    padding-top: 20px;
+                    
+                    
+                   
+                    }
+    
+                    .option-list {
+                    letter-spacing: 1px;
+                     border: unset;
+                     border-radius: 15px;
+                     color: #212121;
+                     z-index: 1;
+                     background: #e8e8e8;
+                     position: relative;
+                     font-weight: 1000;
+                     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     transition: all 250ms;
+                     overflow: hidden;
+                    
+                    }
+                    
+                    .option-list::before {
+                     content: "";
+                     position: absolute;
+                     top: 0;
+                     left: 0;
+                     height: 100%;
+                     width: 0;
+                     border-radius: 15px;
+                     background-color: #212121;
+                     z-index: -1;
+                     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     transition: all 250ms
+                    }
+                    
+                    .option-list:hover {
+                     color: #e8e8e8;
+                    }
+                    
+                    .option-list:hover::before {
+                     width: 100%;
+                    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                    .buttonlogout {
+                     --color: #ad0b0b;
+                     font-family: inherit;
+                     display: inline-block;
+                     width: 8em;
+                     height: 2.6em;
+                     line-height: 2.5em;
+                     margin: 20px;
+                     position: relative;
+                     overflow: hidden;
+                     border: 2px solid var(--color);
+                     transition: color .5s;
+                     z-index: 1;
+                     font-size: 17px;
+                     border-radius: 6px;
+                     font-weight: 1000;
+                     color: var(--color);
+                     font-family: century gothic;
+                     margin-top: 170px;
+                     margin-left: 130px;
+                     
+                    }
+                    
+                    .buttonlogout:before {
+                     content: "";
+                     position: absolute;
+                     z-index: -1;
+                     background: var(--color);
+                     height: 150px;
+                     width: 200px;
+                     border-radius: 50%;
+                    }
+                    
+                    .buttonlogout:hover {
+                     color: #fff;
+                    }
+                    
+                    .buttonlogout:before {
+                     top: 100%;
+                     left: 100%;
+                     transition: all .7s;
+                    }
+                    
+                    .buttonlogout:hover:before {
+                     top: -30px;
+                     left: -30px;
+                    }
+                    
+                    .buttonlogout:active:before {
+                     background: #a30c0c;
+                     transition: background 0s;
+                    }
+    
+                    .metrics {
+    
+                        height: 200px;
+                        width: 97%;
+                        display: flex;
+                        padding: 20px;
+                        border-radius: 40px;
+                        font-family: century gothic;
+                        font-size: 20px;
+                        font-weight: 1000;
+                        display: flex;
+    
+                        
+                    }
+    
+                    .metric1 {
+    
+                    height: 150px;
+                    width: 50%;
+                    background-color: white;
+                    margin-left: 50px;
+                    margin-right: 40px;
+                    border-radius: 20px;
+                    justify-content: center;
+                    padding-top: 50px;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                   
+    
+                    }
+                    .metric2 {
+    
+                    height: 150px;
+                    width: 50%;
+                    background-color: white;
+                    margin-left: 50px;
+                    margin-right: 40px;
+                    border-radius: 20px;
+                    justify-content: center;
+                    padding-top: 50px;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+    
+                                    
+                    }
+                    .dashboardcontainer {
+                    height: 80%;
+                    width: 97%;
+                    background: url("/static/img/backgcontents.jpg");
+                    background-position: 50% 50%;
+            
+                    margin-top: 20px;
+                    margin-right: 40px;
+                    margin-left: 20px;
+                    border-radius: 20px;
+                    padding: 20px 0px 20px 0px;
+                    justify-content: center;
+                    font-family: century gothic;
+                    font-size: 20px;
+                    font-weight: 1000;
+                
+                    
+                   
+    
+                    }
+    
+                    .report {
+                    height: 95%;
+                    width: 93%;
+                    margin-top: -20px;
+                    background: rgba(97, 97, 97, 0.6);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.45);
+                        
+                    margin-right: 40px;
+                    margin-left: 50px;
+                    border-radius: 15px;
+                    justify-content: center;
+                    padding-top: 30px;
+                    padding-bottom: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    }
+                                
+                .reportimage {
+                    height: 60%;
+                    width: 40%;
+                    background-color: white;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    margin: 20px;
+                    border-radius: 20px;
+                    display: flex;
+                }
+                .reportdetails {
+                    height: 90%;
+                    width: 50%;
+                    background-color: white;
+                    align-items: center;
+                    margin-right: 40px;
+                    border-radius: 5px;
+                  
+                }
+
+                .reportdetails h3{
+                    padding-left: 40px ;
+                }
+                
+                
+                .backbutton {
+                 position: relative;
+                 margin: auto;
+                 padding: 12px 18px;
+                 transition: all 0.2s ease;
+                 border: none;
+                 background: none;
+                }
+                
+                .backbutton:before {
+                 content: "";
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 display: block;
+                 border-radius: 50px;
+                 background: #ff0000;
+                 width: 45px;
+                 height: 45px;
+                 transition: all 0.3s ease;
+                }
+                
+                .backbutton span {
+                 position: relative;
+                 font-family: century gothic;
+                 font-size: 15px;
+                 font-weight: 800;
+                 letter-spacing: 0.05em;
+                 color: #ffffff;
+                 padding-left:5px;
+                }
+                
+                .backbutton svg {
+                 position: relative;
+                 top: 0;
+                 margin-left: -2px;
+                 fill: none;
+                 stroke-linecap: round;
+                 stroke-linejoin: round;
+                 stroke: #ffffff;
+                 stroke-width: 3;
+                
+                 transition: all 0.3s ease;
+                }
+                
+                .backbutton:hover:before {
+                 width: 100%;
+                 background: #ff0000;
+                }
+                
+                .backbutton:hover svg {
+                 transform: translateX(-5px);
+                }
+                
+                .backbutton:active {
+                 transform: scale(0.95);
+                }   
+    
+                .reportbutton {
+                     background: #ff0000;
+                     font-family: century gothic;
+                     padding: 0.6em 1.3em;
+                     font-weight: 700;
+                     font-size: 20px;
+                     border: 3px solid black;
+                     border-radius: 0.4em;
+                     box-shadow: 0.1em 0.1em;
+                     margin-left: 220px;
+                     margin-top: 50px;
+                     width: 200px;
+                     height: 70px;
+
+                    }
+
+                    .reportbutton:hover {
+                     transform: translate(-0.05em, -0.05em);
+                     box-shadow: 0.15em 0.15em;
+                    }
+
+                    .reportbutton:active {
+                     transform: translate(0.05em, 0.05em);
+                     box-shadow: 0.05em 0.05em;
+                    }
+                    .ignorebutton {
+                     background: #9b9a9a;
+                     font-family: century gothic;
+                     padding: 0.6em 1.3em;
+                     font-weight: 700;
+                     font-size: 15px;
+                     border: 3px solid black;
+                     border-radius: 0.4em;
+                     box-shadow: 0.1em 0.1em;
+                     margin-left: 220px;
+                     margin-top: 40px;
+                     width: 200px;
+                     height: 40px;
+                                    
+                    }
+                    
+                    .ignorebutton:hover {
+                     transform: translate(-0.05em, -0.05em);
+                     box-shadow: 0.15em 0.15em;
+                    }
+                    
+                    .ignorebutton:active {
+                     transform: translate(0.05em, 0.05em);
+                     box-shadow: 0.05em 0.05em;
+                    }
+
+    
+    
+    
+    
+    
+    
+            </style>
+            </head>
+    <body>
+    
+    
+            <div class="mainpage"> 
+    
+    
+                <div class="sidebar">
+    
+                <div class="accountpane">
+                    <div class="profpicture">
+                        PROFILE <br>PIC
+                        
+                    </div>
+    
+                    <div class="userinfo">{% block content %}
+    
+                        {% if user.is_authenticated %}
+                            {{ user.username }}
+                           
+                         {% else %}
+        
+                         {% endif %}
+                         {% endblock %}
+                         </div>
+    
+                 </div>  
+                    
+                        <div class="options">
+                        
+                            <div class="option-list">
+                                Camera
+                            </div>
+                            <div class="option-list">
+                                House
+                            </div>
+                            <div class="option-list">
+                                Settings
+                            </div>  
+    
+    
+    
+                        </div>
+    
+                         <a href="/signout" ><button class="buttonlogout">LOGOUT</button></a>
+                        
+                </div>
+                <div class="contents">
+    
+                    <a href="/dashboard"><button class="backbutton">
+  
+                        <svg viewBox="0 0 20 10" height="10px" width="15px">
+                          <path d="M1,5 L25,5"></path>
+                          <polyline points="8 1 1 5 8 9"></polyline>
+                        </svg>
+                        <span>back</span>
+                      </button></a>
+
+
+
+
+                        <div class="dashboardcontainer">
+                            
+                            <div class="report">
+                                
+                                <div class="reportimage">
+                                    SAMPLE PICTURE SENT BY OUR IOT
+                                </div>
+                                <div class="reportdetails">
+                                    <h2 style="text-align: center; margin-bottom: 50px;"> HOUSEOWNER</h2>
+
+                                    <h3>
+                                        NAME : DENNIS JUGALBOT
+                                    </h3>
+                                    <h3>
+                                        ADDRESS : 123 Sample House Address Poblacion El Salvador City       
+                                    </h3>
+                                    <h3>
+                                        CONTACT NUMBER : 09123456789 
+                                    </h3>
+                                    <h3>
+                                        DATE AND TIME : OCTOBER 17, 2022 11:59 PM          
+                                    </h3>
+                              
+                                    <button class="reportbutton" > <span style="color: white; padding-top:-20px;letter-spacing: 1px;">REPORT</span>
+                                    </button>
+                                    <button class="ignorebutton" > <span style="color: white;letter-spacing: 1px;">IGNORE</span>
+                                    </button>
+
+
+
+
+                                </div>
+                                
+
+                            </div>
+    
+    
+    
+                        </div>
+    
+    
+    
+    
+    
+    
+    
+                </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            </div>
+    
+    
+    
+           
+    
+    
+    
+            </body>
+    </html>
+    
+    
+    
+    
+    
