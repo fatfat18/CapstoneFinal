@@ -343,6 +343,7 @@
                  transition: all 0.2s ease;
                  border: none;
                  background: none;
+                 padding-left: 30px;
                 }
                 
                 .backbutton:before {
@@ -353,7 +354,7 @@
                  display: block;
                  border-radius: 50px;
                  background: #ff0000;
-                 width: 45px;
+                 width: 110px;
                  height: 45px;
                  transition: all 0.3s ease;
                 }
@@ -365,33 +366,33 @@
                  font-weight: 800;
                  letter-spacing: 0.05em;
                  color: #ffffff;
-                 padding-left:5px;
+               
                 }
                 
                 .backbutton svg {
                  position: relative;
                  top: 0;
-                 margin-left: -2px;
                  fill: none;
                  stroke-linecap: round;
                  stroke-linejoin: round;
                  stroke: #ffffff;
                  stroke-width: 3;
+                 transition: all 0.09s ease;
                 
-                 transition: all 0.3s ease;
                 }
                 
                 .backbutton:hover:before {
-                 width: 100%;
+                 
                  background: #ff0000;
                 }
                 
-                .backbutton:hover svg {
-                 transform: translateX(-5px);
+                .backbutton:active svg {
+                    transform: translateX(-10px);
                 }
                 
                 .backbutton:active {
                  transform: scale(0.95);
+                 
                 }   
     
                 .reportbutton {
@@ -538,7 +539,7 @@
                               
                                     <button class="reportbutton" > <span style="color: white; padding-top:-20px;letter-spacing: 1px;">REPORT</span>
                                     </button>
-                                    <button class="ignorebutton" > <span style="color: white;letter-spacing: 1px;">IGNORE</span>
+                                    <button class="ignorebutton" > <span style="color: black;letter-spacing: 1px;">IGNORE</span>
                                     </button>
 
 
