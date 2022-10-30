@@ -25,7 +25,7 @@ SECRET_KEY = '+kx#j*xezpz*-os=ltq%-7xzb1xo0s&!yw**6j02bfu!@6)%!d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1' , 'capstonefinalteambois.herokuapp.com']
 
 # STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 # STATIC_URL = '/static/'
