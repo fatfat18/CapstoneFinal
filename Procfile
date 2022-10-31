@@ -1,3 +1,3 @@
-web: gunicorn --bind 0.0.0.0:$PORT SafeSight:app
-python manage.py collectstatic --noinput
-manage.py migrate
+web: python manage.py runserver
+web: gunicorn --pythonpath path_wsgi_application --log-file -
+heroku ps:scale web=1
