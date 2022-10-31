@@ -135,6 +135,7 @@ USE_TZ = True
 
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # STATICFILES_DIRS = ( os.path.join('static'), )
 
