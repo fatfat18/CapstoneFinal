@@ -21,7 +21,7 @@
           height: 100%;
           width: 100%;
           background: url("/static/img/signupback.jpg")  no-repeat fixed;
-          background-repeat: no-repeat;
+          background-repeat: fit-content;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -30,7 +30,7 @@
         }
 
         .mainpage {
-          height: 90%;
+          height: 95%;
           width: 40%;
           background: rgba(255,255,255,0);
 -webkit-backdrop-filter: blur(12px);
@@ -41,18 +41,24 @@ border: 1px solid rgba(255,255,255,0);
           text-align:center;
           border: ridge 10px;
           border-radius: 50px;
+  
       
 
 
         }
 
-        .logincontent{
-              justify-content: center;
-              align-items: center;
-              text-align: center;
-              padding-left: 10vw;
+        .signupcontent {
+          display: flex;
+          padding: 0;
+          margin: 0;
+          justify-content:center;
+          align-items:center;
+          text-align:center;
+              
+            }
 
-          }
+
+       
 
 
 
@@ -108,7 +114,6 @@ border: 1px solid rgba(255,255,255,0);
               font-family: century gothic;
               font-size: 20px;
               letter-spacing: 2px;
-              margin-left: 180px;
               color: white;
               font-weight: 1000;
               
@@ -170,6 +175,7 @@ border: 1px solid rgba(255,255,255,0);
             }
 
 
+           
 
 
 
@@ -195,7 +201,7 @@ border: 1px solid rgba(255,255,255,0);
                   <h2 style="color:white; letter-spacing: .5px; border-radius: 6px; font-family: century gothic; letter-spacing: 1px;">{{msg}}</h2>
 
   
-    
+                <div class="signupcontent">
                   <form method="post" class="site-form">
                     {% csrf_token %}
                   
@@ -210,11 +216,11 @@ border: 1px solid rgba(255,255,255,0);
                           <i></i>
                                      
                                 
-                                 </div>
+                        </div>
                               {% endfor %}
                          
                             <button type="submit" value="Register" class="button">REGISTER</button>
-                      
+              
                   
 
                  </div>
@@ -225,7 +231,7 @@ border: 1px solid rgba(255,255,255,0);
 
 
 
-</div>
+    </div>
 </div>
 
 

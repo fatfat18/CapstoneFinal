@@ -227,14 +227,14 @@
 
 
             .logincontent{
+              display: flex;
               justify-content: center;
               align-items: center;
               text-align: center;
-              padding-left: 22vw;
 
-            
-            
           }
+
+      
 
 
           .subpage {
@@ -347,6 +347,94 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  
+  .container {
+          height: 95.5%;
+          width: 100%;
+          background-color: rgb(241, 221, 221);
+     
+      
+         
+          
+        }
+
+        .mainpage {
+          height: 100%;
+          width: 100%;
+          background-color: rgb(255, 255, 255);
+        }
+
+        .mainpage h2 {
+          font-size: 5px;
+          font-weight: 200;
+        }
+        .mainpage svg {
+          height: 200px;
+          width: 200px;
+        }
+  
+        
+
+        .subpage {
+          height: 50%;
+          width: 30%;
+          background-color: rgb(20, 20, 20);
+          padding-top:9vh;
+          font-family: century gothic;
+
+        
+    
+        }
+        .subpagecontent{
+          height: 500px;
+          width: 100%;
+          padding-top: 20vh;
+          justify-content:center;
+          align-items:center;
+          text-align:center;
+          margin: 50px;
+          letter-spacing: .5px;
+        }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
       </style>
 
 
@@ -416,7 +504,7 @@
             {% csrf_token %}
 
       <div class="logincontent">
-
+             <div class="logininfo">
              <div class="inputbox">
              <input type="text"  name="username"  required=""  autocomplete="off"><span>Username</span>
              <i></i>
@@ -426,6 +514,7 @@
              <input type="password" name="password" required="" autocomplete="off"><span>Password</span>
              <i></i>
             </div>
+          </div>
       </div>
      
             <button type="submit" class="button" >Login</button><br>
@@ -439,22 +528,22 @@
 
         </div>
 
-
         <div class="subpage">
 
 
-              <div class="subpagecontent" style="color: white ;">
-                <h1 style="font-size:50px;"> New Here? </h1>
-                <h6 style="font-size:20px;"> Sign Up and Start Securing your home with us now! With the use of an IoT device Home Security with Facial Recognition! </h6>
-                
-                <a href="/signup" style="text-decoration: none ;"> <button data-text="Awesome" class="buttonreg">
-                  <span class="actual-text">&nbsp;REGISTER&nbsp;</span>
-                  <span class="hover-text" aria-hidden="true">&nbsp;REGISTER&nbsp;</span>
-                
-              </button>
+          <div class="subpagecontent" style="color: white ;">
+            <h1 style="font-size:50px;"> New Here? </h1>
+            <h6 style="font-size:20px;"> Sign Up and Start Securing your home with us now! With the use of an IoT device Home Security with Facial Recognition! </h6>
+            
+            <a href="/signup" style="text-decoration: none ;"> <button data-text="Awesome" class="buttonreg">
+              <span class="actual-text">&nbsp;REGISTER&nbsp;</span>
+              <span class="hover-text" aria-hidden="true">&nbsp;REGISTER&nbsp;</span>
+            
+             </button>
             </a>
-              </div>
+      </div>
 
+    
               
 
 
@@ -462,7 +551,7 @@
 
         </div>
 
-
+      
 
 
 
