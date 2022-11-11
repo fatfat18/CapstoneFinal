@@ -1,0 +1,243 @@
+
+{% load static %}
+
+
+{% block content %}
+
+
+<html>
+<head>
+  <style>
+
+   body{
+    margin:0;
+
+
+
+
+
+  }
+    .container {
+          height: 100%;
+          width: 100%;
+          background: url("/static/img/signupback.jpg")  no-repeat fixed;
+          background-repeat: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+        }
+
+        .mainpage {
+          height: 95%;
+          width: 40%;
+          background: rgba(255,255,255,0);
+-webkit-backdrop-filter: blur(12px);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255,255,255,0);
+          justify-content:center;
+          align-items:center;
+          text-align:center;
+          border: ridge 10px;
+          border-radius: 50px;
+  
+      
+
+
+        }
+
+        .signupcontent {
+          display: flex;
+          padding: 0;
+          margin: 0;
+          justify-content:center;
+          align-items:center;
+          text-align:center;
+            padding-top: 200px
+            }
+
+
+       
+
+
+
+.button {
+         padding: 0.8em 1.8em;
+         border: 2px solid white;
+         position: relative;
+         overflow: hidden;
+         background-color: transparent;
+         text-align: center;
+         text-transform: uppercase;
+         font-size: 20px;
+         transition: .3s;
+         z-index: 1;
+         font-family: inherit;
+         color: white;
+         height: 60px;
+         width: 400px;
+         margin-top:20px;
+         font-family: century gothic;
+         letter-spacing: 1.5px;
+         font-weight: 1000;
+    
+        }
+
+        .button::before {
+         content: '';
+         width: 0;
+         height: 680%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%) rotate(45deg);
+         background: rgb(255, 255, 255);
+         transition: .5s ease;
+         display: block;
+         z-index: -1;
+        }
+
+        .button:hover::before {
+         width: 105%;
+        }
+
+        .button:hover {
+          color: black;
+
+        }
+
+        .inputbox {
+              position: relative;
+              width: 400px;
+              margin-bottom: 20px;
+              font-family: century gothic;
+              font-size: 20px;
+              letter-spacing: 2px;
+              color: white;
+              font-weight: 1000;
+              
+
+            }
+
+            .inputbox input {
+              position: relative;
+              width: 100%;
+              padding: 20px 10px 10px;
+              background: transparent;
+              outline: none;
+              box-shadow: none;
+              border: none;
+              color: black;
+              font-size: 1em;
+              letter-spacing: 0.05em;
+              transition: 0.5s;
+              z-index: 10;
+              letter-spacing: 2px;
+            }
+
+            .inputbox span {
+              position: absolute;
+              left: 0;
+              padding: 10px 10px 10px;
+              font-size: 20px;
+              color: #8f8f8f;
+              letter-spacing: 00.05em;
+              transition: 0.5s;
+              pointer-events: none;
+
+            }
+
+            .inputbox input:valid ~span,
+            .inputbox input:focus ~span {
+              color: white;
+              transform: translateX(-10px) translateY(-40px);
+    
+              font-size: 35px;
+            }
+
+            .inputbox i {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: white;
+              border-radius: 4px;
+              transition: 0.5s;
+              pointer-events: none;
+              z-index: 9;
+            }
+
+            .inputbox input:valid ~i,
+            .inputbox input:focus ~i {
+              height: 44px;
+            }
+
+
+           
+
+
+
+
+
+
+
+
+
+
+  </style>
+
+</head>
+<body >
+
+
+<div class="container">
+
+    <div class="mainpage">
+                  <h2 style="font-family: century gothic; font-size: 40px; letter-spacing: 2px; color: white ;">RESET PASSWORD</h2>
+              
+
+                  <h2 style="color:white; letter-spacing: .5px; border-radius: 6px; font-family: century gothic; letter-spacing: 1px;">{{msg}}</h2>
+
+  
+                <div class="signupcontent">
+                    <form method="post" class="site-form">
+                        {% csrf_token %}
+                      
+                            
+                       
+                            
+                        <div class="inputbox">
+                            <input type="password" name="password" required="" autocomplete="off"><span>Email</span>
+                            <i></i>
+                           </div>
+                   
+                            
+                            <button type="submit" value="resetpass" class="button">SEND RESET PASSWORD LINK</button>
+                  
+                      
+    
+                     </div>
+                  
+      
+    
+                </form>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+  </html>
+
+
+
+
+{% endblock %}

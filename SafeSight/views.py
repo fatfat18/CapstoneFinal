@@ -15,6 +15,7 @@ from .forms import CustomUserCreationForm
 
 
 
+
 def signup(request):
       if request.user.is_authenticated:
           return redirect('/profile')
@@ -78,3 +79,7 @@ def dashboard(request):
 
 def reportcontents(request):
     return render(request, 'reportcontents.html')
+
+def forgotpass(request):
+    return render(request, 'forgotpass.html') 
+     

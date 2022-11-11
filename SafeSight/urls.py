@@ -38,6 +38,7 @@ urlpatterns = [
     path('aboutus/',views.aboutus, name='aboutus'),
     path('dashboard/',views.dashboard, name='dashboard'),
     path('reportcontents/',views.reportcontents, name='reportcontents'),
+    path('forgotpass/',views.forgotpass, name='forgotpass'),
     # url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
  
