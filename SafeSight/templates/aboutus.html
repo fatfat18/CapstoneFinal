@@ -30,9 +30,11 @@
               background: rgba(217,185,185,0.35);
               -webkit-backdrop-filter: blur(1px);
               backdrop-filter: blur(1px);
-              width:80%;
+              width: 700px;
               height: 300px;
               justify-content:center;
+              align-items: center;
+              align-self: center;
               display:flex;
               margin-left: 10% ;
               margin-right: 10% ;
@@ -165,6 +167,15 @@ svg {
   margin-left: 70px;
 
 }
+ 
+.spacercontainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
 
 
 
@@ -194,7 +205,7 @@ svg {
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 	
   .spacer {
               background: rgba(217,185,185,0.35);
@@ -219,7 +230,7 @@ svg {
  position: relative;
  box-shadow: 0px 2px 5px rgba(35,35,35,0.3);
  transition: box-shadow .3s ease-in-out;
- margin: -90px -12px 0px 28px;
+
 
 }
 
@@ -328,6 +339,10 @@ svg {
     letter-spacing: 1px;
 }
 
+.spacercontainer {
+  width: 100%;
+  height: auto;
+}
 
 
 
@@ -371,8 +386,11 @@ svg {
 <div class="test">
     <div class="title1"> Researchers / Developers
             </div>
-
+      <div class="spacercontainer"> 
         <div class="spacer">
+
+
+             
             
 
         <div class="card">
@@ -392,7 +410,8 @@ svg {
     <p class="title">Patrick</p>
     <p class="subtitle">Project Manager</p>
   </div>
-</div>
+  </div>
+
 
 <div class="divider">
 
@@ -416,14 +435,14 @@ svg {
     <p class="title">Kyle</p>
     <p class="subtitle">Marketing</p>
   </div>
+  </div>
 </div>
-
 
   
                 
         </div>
 
-
+      <div class="spacercontainer"> 
         <div class="spacer">
           <div class="card">
             <div class="card-img"> <img src="{% static 'img/emman.jpg' %}"> </div>
@@ -470,8 +489,7 @@ svg {
 
         </div>
 
-
-
+</div>
 
 
 
