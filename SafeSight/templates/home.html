@@ -63,8 +63,7 @@
 				background: url("/static/img/landingcoverpage.jpg");
 				background-repeat: no-repeat;
 				background-size: 110% 100%;
-				
-				
+			
 			}
 
 			.frontpageheader {
@@ -74,6 +73,23 @@
 				display:flex;
 				justify-content: center;
 			}
+
+			.frontpageheader h1 {
+			font-size: 6rem;color:red; 
+			letter-spacing:5px; 
+			animation: logopop .8s;
+			font-weight: 1000; 
+			-webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
+			}
+			
+			.frontpageheader img {
+
+				height: 350px; 
+				width:350px;
+
+			}
+
 
 			@keyframes headerpop {
 				0% {
@@ -97,10 +113,14 @@
 				margin-left: 50px;
 			}
 
+			.frontpagedetails h2 {
+				text-align: justify; 
+				font-size: 1.5rem;
+			}
+
 			.frontpagecardcontainer {
 				width: 100%;
 				height: 400px;
-		
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -138,8 +158,6 @@
 				border-radius: 20px;
 				animation: logopop 1s;
 				background-color: rgba(255, 255, 255, 0.774);
-				
-
 			}
 
 			.frontpagecard h1 {
@@ -311,30 +329,120 @@
 
 
 			@media only screen and (max-width: 800px) {
-	body {
-    background-color: white;
-	height: 30px;
-  }
+
 
   
-
+  			
+	
 			.frontpage {
-				padding-top: 50px;
-				width: 90%;
-				height: 93.5vh;
-				display: block;
+
+				width: 140%;
+				height: auto;
+				display: flex;
 				margin: 0;
+				flex-direction: column;
+				
+			
 			}
 
-			.frontpage svg {
-				height: 500px;
-				margin-left: -380px;
+			
+			.frontpagecontents {
+				height: 93vh;
+				width: 100%;
+				background: url("/static/img/landingcoverpage.jpg");
+				background-repeat: no-repeat;
+				background-size: 150% 50%;
+				display: flex;
+				flex-direction: column;
+			
 			}
+
+			.frontpageheader {
+				width: 100%;
+				height: 300px;
+				animation: headerpop 1s;
+				display:flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+	
+				
+			}
+
+			.frontpageheader h1 {
+			font-size: 3rem;color:red; 
+			letter-spacing:5px; 
+			animation: logopop .8s;
+			font-weight: 1000; 
+	
+			}
+
+			.frontpageheader img {
+
+				height: 150px; 
+				width:150px;
+				margin-top: 120px;
+
+			}
+
+			.frontpagedetails {
+				width: 80%;
+				display: flex;
+				justify-content: center;
+				align-self:center;
+				text-align: center;
+				margin-left: 50px;
+				font-size: 1rem;
+				
+			}
+
+			.frontpagedetails h2 {
+	
+				text-align: justify; 
+				font-size: 1rem;
+			
+			}
+
+			.frontpagecardcontainer {
+				width: 100%;
+				height: 400px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 50px;
+			}
+
+
+			.frontpagecard {
+				width: 70px;
+				height: 60px;
+				border: solid 5px #121212;
+				object-fit: cover;
+				border-radius: 20px;
+				animation: logopop 1s;
+				background-color: rgba(255, 255, 255, 0.774);
+			}
+
+			.frontpagecard h1 {
+				font-size: 15px;
+				-webkit-text-stroke-width: .5px;
+            	-webkit-text-stroke-color: rgb(255, 255, 255);
+			}
+
+			.frontpagecard img {
+				width: 70px;
+				height: 70px;
+				margin-top: -15px;
+				transform: scale(1);
+			}
+
+			
 
 
 			
 			.getstarted {
-				width: 98vw;
+				width: 100%;
 				background-color:white;
 				margin: 0;
 				height: 50vh;
@@ -460,7 +568,7 @@
 			.footer{
 				padding-top:2vh;
 				font-size:1.3vh;
-				width: 116%;
+				width: 130%;
 				background-color: #121212;
 				color:white;
 				height:150px;
@@ -491,15 +599,14 @@
 
 
 		<div class="frontpageheader" style="height: 200px;">
-			<h1 style="font-size: 6rem;color:red; letter-spacing:5px; animation: logopop .8s;font-weight: 1000; -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: rgb(255, 255, 255);">SafeSight</h1><br>
+			<h1>SafeSight</h1><br>
 
 		</div>
 
 		<div class="frontpageheader">
-			<a href="/"><img src="{% static 'img/sslogo.png' %}" style="height: 350px; width:350px" id="logo"></a>
+			<a href="/"><img src="{% static 'img/sslogo.png' %}" id="logo"></a>
 			<div class="frontpagedetails">
-				<h2 style="text-align: justify; font-size: 1.5rem;">SafeSight is a Home Security System that uses Facial Recognition Camera with Notifier that compiles and sends all the details to you of the automated report information using the web and help you send immediate report to the nearest police station. </h2>
+				<h2>SafeSight is a Home Security System that uses Facial Recognition Camera with Notifier that compiles and sends all the details to you of the automated report information using the web and help you send immediate report to the nearest police station. </h2>
 			</div>
 		</div>
 		
