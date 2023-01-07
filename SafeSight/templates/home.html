@@ -60,8 +60,11 @@
 			.frontpagecontents {
 				height: 93vh;
 				width: 80%;
-				background: url("/static/img/landingcover.png");
-
+				background: url("/static/img/landingcoverpage.jpg");
+				background-repeat: no-repeat;
+				background-size: 110% 100%;
+				
+				
 			}
 
 			.frontpageheader {
@@ -82,6 +85,9 @@
 					transform: translateX(0);
 				}
 			}
+
+			#logo { animation: headerpop 1.1s;}
+
 			.frontpagedetails {
 				width: 40%;
 				display: flex;
@@ -130,6 +136,7 @@
 				object-fit: cover;
 				border-radius: 20px;
 				animation: logopop 1s;
+				background-color: rgba(255, 255, 255, 0.774);
 				
 
 			}
@@ -176,8 +183,19 @@
 			  font-family: century gothic;
 			  letter-spacing: 1px;
 			  font-weight: 1000;
-			  animation: logopop 1s;
+			  animation: getstartedpop 1s;
 			  
+			}
+			@keyframes getstartedpop {
+
+				0% {
+					transform: translateY(-500px);
+				}
+
+				100% {
+					transform: translateY(0px);
+				}
+				
 			}
 			
 			.getstartedbutton p {
@@ -233,7 +251,7 @@
 			  font-family: century gothic;
 			  letter-spacing: 1px;
 			  font-weight: 1000;
-			  animation: logopop 1s;
+			  animation: getstartedpop 1s;
 			}
 			
 			.aboutusbutton p {
@@ -310,9 +328,6 @@
 				margin-left: -380px;
 			}
 
-			.frontpagecontents {
-			
-			}
 
 			
 			.getstarted {
@@ -478,9 +493,9 @@
 		</div>
 
 		<div class="frontpageheader">
-			<a href="/"><img src="{% static 'img/sslogo.png' %}" style="height: 350px; width:350px"></a>
+			<a href="/"><img src="{% static 'img/sslogo.png' %}" style="height: 350px; width:350px" id="logo"></a>
 			<div class="frontpagedetails">
-				<h2 style="text-align: justify;">SafeSight is a Home Security System that uses Facial Recognition Camera with Notifier that compiles and sends all the details to you of the automated report information using the web and help you send immediate report to the nearest police station. </h2>
+				<h2 style="text-align: justify; font-size: 1.7rem;">SafeSight is a Home Security System that uses Facial Recognition Camera with Notifier that compiles and sends all the details to you of the automated report information using the web and help you send immediate report to the nearest police station. </h2>
 			</div>
 		</div>
 		
