@@ -1,4 +1,6 @@
 asgiref==3.5.2
+bcrypt==4.0.1
+certifi==2022.9.24
 distlib==0.3.4
 -e git+https://github.com/django/django.git@de74a74b4b889c986cabab837bb03e2113880afe#egg=Django
 filelock==3.7.1
@@ -6,8 +8,12 @@ gunicorn==20.1.0
 mysqlclient==2.1.1
 numpy==1.22.4
 opencv-python==4.6.0.66
+pipenv==2022.10.25
 platformdirs==2.5.2
+pwinput==1.0.2
 six==1.16.0
 sqlparse==0.4.2
 tzdata==2022.1
 virtualenv==20.14.1
+virtualenv-clone==0.5.7
+whitenoise==6.2.0

@@ -27,7 +27,7 @@ SECRET_KEY = '+kx#j*xezpz*-os=ltq%-7xzb1xo0s&!yw**6j02bfu!@6)%!d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 # STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 # STATIC_URL = '/static/'
@@ -138,4 +138,10 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # STATICFILES_DIRS = ( os.path.join('static'), )
+
+import os
+
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 
