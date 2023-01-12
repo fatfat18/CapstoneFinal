@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError  
 from django.forms.fields import EmailField  
 from django.forms.forms import Form  
+
   
 class CustomUserCreationForm(UserCreationForm):  
     username = forms.CharField(label='Username', min_length=3, max_length=150)
@@ -40,3 +41,7 @@ class CustomUserCreationForm(UserCreationForm):
             self.cleaned_data['password1']  
         )
         return user  
+
+    
+
+  

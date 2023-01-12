@@ -27,7 +27,7 @@ SECRET_KEY = '+kx#j*xezpz*-os=ltq%-7xzb1xo0s&!yw**6j02bfu!@6)%!d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
 
 # STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 # STATIC_URL = '/static/'
@@ -139,7 +139,14 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # STATICFILES_DIRS = ( os.path.join('static'), )
 
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_FROM = 'syncocovers@gmail.com'
+EMAIL_HOST_USER = 'syncocovers@gmail.com'
+EMAIL_HOST_PASSWORD = 'nncwxfijlkmnywlr'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+PASSWORD_RESET_TIMEOUT = 14400
 
