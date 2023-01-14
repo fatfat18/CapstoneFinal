@@ -47,7 +47,7 @@ def activate(request, uidb64, token):
 
 
 def activateEmail(request, user):
-    mail_subject = "Activate your user account."
+    mail_subject = "Activate your SafeSight Account."
     message = render_to_string("activate_account.html", {
         'user': user.username,
         'domain': get_current_site(request).domain,
