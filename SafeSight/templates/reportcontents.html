@@ -270,7 +270,7 @@
                 .dashboardcontainer {
                 height: 80%;
                 width: 97%;
-                background: url("/static/img/backgcontents.jpg");
+          
                 background-position: 50% 50%;
         
                 margin-top: 20px;
@@ -280,7 +280,7 @@
                 padding: 20px 0px 20px 0px;
                 justify-content: center;
                 font-family: century gothic;
-                font-size: 20px;
+                font-size: clamp(.5rem,2.5vw,1rem);
                 font-weight: 1000;
                 display: flex;
                 justify-content: center;
@@ -337,9 +337,11 @@
 
                 .reportdetails p {
                     margin-left: 50px;
+                    font-size: clamp(.5rem,2.5vw,1rem);
                 }
 
                 .reportdetails h1 {
+                    font-size: clamp(.5rem,2.5vw,1rem);
                     display: flex;
                     justify-content: center;
                     text-align: center;
@@ -526,6 +528,340 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    @media screen and (max-width: 850px) {
+
+body{ font-size: 1rem; overflow-x: hidden;}
+
+.navbar {
+
+    height: 30vh;
+    width: 100%;
+    background: rgba(255,255,255,.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+    align-items: center;
+    }
+
+
+
+
+    .contents {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 20px ;
+    
+    
+    }
+
+
+
+    .accountpane{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+
+    
+    }
+
+
+    .userinfo{
+    
+    font-size: 3rem;
+    font-family: century gothic;
+    color: black;
+    font-weight: 1000;
+    margin-left: 20px;
+    padding-top: 5px;
+    
+    
+    
+    }
+
+    .profpicture {
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 100px;
+    font-family: century gothic;
+    font-weight: 1000;
+    margin-left: 5px;
+    
+
+    }
+
+
+
+
+
+
+    .options {
+    
+    height: 80px;
+    width: 100%;
+    
+    border: solid 1px;
+    display: flex;
+        
+    text-align: center;
+
+    justify-content:center;
+    gap: 10px;
+    
+    align-items: center;
+    
+    border: 0px;
+
+    
+    
+    
+    
+    }
+
+    .option-list {
+    
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: century gothic;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+    .option-list {
+    
+    letter-spacing: 1px;
+     border: unset;
+     border-radius: 15px;
+     color: #212121;
+     z-index: 1;
+     background: #e8e8e8;
+     position: relative;
+     font-weight: 1000;
+     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+     transition: all 250ms;
+     overflow: hidden;
+     font-size: 1rem;
+    
+    }
+
+    .option-list::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 0;
+     border-radius: 15px;
+     background-color: #212121;
+     z-index: -1;
+     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+     transition: all 250ms;
+    
+    }
+
+    .option-list:hover {
+     color: #e8e8e8;
+    }
+
+    .option-list:hover::before {
+     width: 100%;
+    }
+
+
+
+
+
+    .logout {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+        margin: 0px;
+        padding: 0px;
+ 
+       
+       
+       
+    
+    
+    }
+
+
+    .buttonlogout {
+     --color: #ad0b0b;
+     font-family: inherit;
+    
+     width: 8em;
+     height: 2.6em;
+     line-height: 2.5em;
+ 
+     overflow: hidden;
+     border: 2px solid var(--color);
+     transition: color .5s;
+     z-index: 1;
+     font-size: 17px;
+     border-radius: 6px;
+     font-weight: 1000;
+     color: var(--color);
+     font-family: century gothic;
+
+    
+    }
+
+
+             .dashboardcontainer {
+                height: 80%;
+                width: 97%;
+                
+          
+                background-position: 50% 50%;
+        
+             
+                border-radius: 20px;
+        
+                justify-content: center;
+                font-family: century gothic;
+                font-size: clamp(.5rem,2.5vw,1rem);
+                font-weight: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            
+             
+
+                }
+
+                .report {
+                height: 100%;
+                width: 90%;
+              
+                background: rgba(97, 97, 97, 0.6);
+                -webkit-backdrop-filter: blur(20px);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.45);        
+        
+                border-radius: 15px;
+                justify-content: center;
+           
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                }
+                     
+                
+                .reportimage {
+                    height: 90%;
+                    width: 70%;
+                    background-color: white;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    margin: 20px;
+                    border-radius: 20px;
+                    display: flex;
+                }
+                .reportdetails {
+                    height: 90%;
+                    width: 90%;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: left;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    margin: 0px 0px 0px 0px;
+                    font-size: 1.2rem;
+                    
+                    
+                  
+                }
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
@@ -621,7 +957,7 @@
 
                                         <div class="reportbutton2">
 
-                                            <button class="reportbutton" > <span>REPORT</span>
+                                            <button class="reportbutton" > <span style="color: white;">REPORT</span>
                                             </button>
 
                                         </div>
