@@ -263,38 +263,10 @@
                 
             }
     
-                .metric1 {
-
-                height: 150px;
-                width: 50%;
-                background-color: white;
-                margin-left: 50px;
-                margin-right: 40px;
-                border-radius: 20px;
-                justify-content: center;
-                padding-top: 50px;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-                
-
-                }
-                .metric2 {
-
-                height: 150px;
-                width: 50%;
-                background-color: white;
-                margin-left: 50px;
-                margin-right: 40px;
-                border-radius: 20px;
-                justify-content: center;
-                padding-top: 50px;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
+          
 
                                 
-                }
+                
                 .dashboardcontainer {
                 height: 80%;
                 width: 97%;
@@ -310,26 +282,26 @@
                 font-family: century gothic;
                 font-size: 20px;
                 font-weight: 1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             
-                
-                
+             
 
                 }
 
                 .report {
-                height: 95%;
-                width: 93%;
-                margin-top: -20px;
+                height: 90%;
+                width: 90%;
+              
                 background: rgba(97, 97, 97, 0.6);
                 -webkit-backdrop-filter: blur(20px);
                 backdrop-filter: blur(10px);
                 border: 1px solid rgba(255,255,255,0.45);        
-                margin-right: 40px;
-                margin-left: 50px;
+        
                 border-radius: 15px;
                 justify-content: center;
-                padding-top: 30px;
-                padding-bottom: 20px;
+           
                 justify-content: center;
                 align-items: center;
                 display: flex;
@@ -337,8 +309,8 @@
                      
                 
                 .reportimage {
-                    height: 60%;
-                    width: 40%;
+                    height: 90%;
+                    width: 50%;
                     background-color: white;
                     justify-content: center;
                     align-items: center;
@@ -349,20 +321,39 @@
                 }
                 .reportdetails {
                     height: 90%;
-                    width: 50%;
+                    width: 40%;
                     background-color: white;
-                    align-items: center;
-                    margin-right: 40px;
-                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: left;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    margin: 0px 0px 0px 0px;
+                    font-size: 1.2rem;
+                    
+                    
                   
                 }
 
-                .reportdetails h3{
-                    padding-left: 40px ;
+                .reportdetails p {
+                    margin-left: 50px;
                 }
+
+                .reportdetails h1 {
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                }
+          
                 
-                
+                .backbuttoncontainer {
+
+                    width:90%;
+    
+
+                }
                 .backbutton {
+            
                  position: relative;
                  margin: auto;
                  padding: 12px 18px;
@@ -370,9 +361,14 @@
                  border: none;
                  background: none;
                  padding-left: 30px;
+                 
+                
+             
+            
                 }
                 
                 .backbutton:before {
+                 border: solid 5px white;
                  content: "";
                  position: absolute;
                  top: 0;
@@ -383,15 +379,17 @@
                  width: 110px;
                  height: 45px;
                  transition: all 0.3s ease;
+                 
                 }
                 
                 .backbutton span {
                  position: relative;
                  font-family: century gothic;
-                 font-size: 15px;
+                 font-size: 1rem;
                  font-weight: 800;
                  letter-spacing: 0.05em;
                  color: #ffffff;
+               
                
                 }
                 
@@ -420,7 +418,23 @@
                  transform: scale(0.95);
                  
                 }   
-    
+                
+
+
+                .reportbuttoncontainer {
+                    width: 100%;
+                    height: 200px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+        
+                    flex-direction: column;
+
+                    
+                }
+
+                
+               
                 .reportbutton {
                      background: #ff0000;
                      font-family: century gothic;
@@ -430,10 +444,12 @@
                      border: 3px solid black;
                      border-radius: 0.4em;
                      box-shadow: 0.1em 0.1em;
-                     margin-left: 220px;
-                     margin-top: 50px;
-                     width: 200px;
-                     height: 70px;
+                    padding: 30px;
+                    width: 100%;
+                  
+                    
+                 
+            
 
                     }
 
@@ -446,6 +462,7 @@
                      transform: translate(0.05em, 0.05em);
                      box-shadow: 0.05em 0.05em;
                     }
+
                     .ignorebutton {
                      background: #9b9a9a;
                      font-family: century gothic;
@@ -455,8 +472,7 @@
                      border: 3px solid black;
                      border-radius: 0.4em;
                      box-shadow: 0.1em 0.1em;
-                     margin-left: 220px;
-                     margin-top: 40px;
+             
                      width: 200px;
                      height: 40px;
                                     
@@ -565,14 +581,15 @@
                 </div>
                 <div class="contents">
     
-                    <a href="/dashboard"><button class="backbutton">
+                    <a href="/dashboard" class="backbuttoncontainer" ><button class="backbutton">
   
                         <svg viewBox="0 0 20 10" height="10px" width="15px">
                           <path d="M1,5 L25,5"></path>
                           <polyline points="8 1 1 5 8 9"></polyline>
                         </svg>
                         <span>back</span>
-                      </button></a>
+                      </button>
+                    </a>
 
 
 
@@ -585,26 +602,39 @@
                                     SAMPLE PICTURE SENT BY OUR IOT
                                 </div>
                                 <div class="reportdetails">
-                                    <h2> HOUSEOWNER</h2>
+                                    <h1> HOUSEOWNER</h2>
 
-                                    <h3>
+                                    <p>
                                         NAME : DENNIS JUGALBOT
-                                    </h3>
-                                    <h3>
+                                    </p>
+                                    <p>
                                         ADDRESS : 123 Sample House Address Poblacion El Salvador City       
-                                    </h3>
-                                    <h3>
+                                    </p>
+                                    <p>
                                         CONTACT NUMBER : 09123456789 
-                                    </h3>
-                                    <h3>
+                                    </p>
+                                    <p>
                                         DATE AND TIME : OCTOBER 17, 2022 11:59 PM          
-                                    </h3>
+                                    </p>
                               
-                                    <button class="reportbutton" > <span >REPORT</span>
-                                    </button>
-                                    <button class="ignorebutton" > <span >IGNORE</span>
-                                    </button>
+                                    <div class="reportbuttoncontainer">
 
+                                        <div class="reportbutton2">
+
+                                            <button class="reportbutton" > <span>REPORT</span>
+                                            </button>
+
+                                        </div>
+                                        <div class="ignorebutton2">
+                                            <button class="ignorebutton" > <span>IGNORE</span>
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+
+                                    
+                                    
 
 
 
