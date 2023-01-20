@@ -541,14 +541,14 @@
 
 
 
-                    @media screen and (max-width: 850px) {
+                    @media only screen and (max-device-width: 800px) {
 
 body{ font-size: 1rem; overflow-x: hidden;}
 
 .navbar {
 
-    height: 30vh;
-    width: 100%;
+    height: 23vh;
+    width: 101%;
     background: rgba(255,255,255,.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -581,7 +581,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
     .accountpane{
     width: 100%;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: center;
 
@@ -591,7 +591,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
     .userinfo{
     
-    font-size: 3rem;
+    font-size: 5rem;
     font-family: century gothic;
     color: black;
     font-weight: 1000;
@@ -603,8 +603,8 @@ body{ font-size: 1rem; overflow-x: hidden;}
     }
 
     .profpicture {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     margin-top: 5px;
     background-color: white;
     display: flex;
@@ -626,7 +626,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
     .options {
     
-    height: 80px;
+    height: 150px;
     width: 100%;
     
     border: solid 1px;
@@ -649,8 +649,8 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
     .option-list {
     
-    height: 50px;
-    width: 200px;
+    height: 80px;
+    width: 300px;
     background-color: white;
     border: solid 1px;
     display: flex;
@@ -684,7 +684,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
      box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
      transition: all 250ms;
      overflow: hidden;
-     font-size: 1rem;
+     font-size: clamp(.5rem, 2.5vw, 3rem); 
     
     }
 
@@ -718,7 +718,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
     .logout {
         width: 100%;
-        height: 80px;
+        height: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -739,9 +739,9 @@ body{ font-size: 1rem; overflow-x: hidden;}
      --color: #ad0b0b;
      font-family: inherit;
     
-     width: 8em;
-     height: 2.6em;
-     line-height: 2.5em;
+     width: 12em;
+     height: 5em;
+     line-height: 4em;
  
      overflow: hidden;
      border: 2px solid var(--color);
@@ -759,7 +759,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
              .dashboardcontainer {
                 height: 80%;
-                width: 97%;
+                width: 90vw;
                 
           
                 background-position: 50% 50%;
@@ -781,8 +781,8 @@ body{ font-size: 1rem; overflow-x: hidden;}
                 }
 
                 .report {
-                height: 100%;
-                width: 90%;
+                height: 90vh;
+                width: 80vw;
               
                 background: rgba(97, 97, 97, 0.6);
                 -webkit-backdrop-filter: blur(20px);
@@ -800,8 +800,8 @@ body{ font-size: 1rem; overflow-x: hidden;}
                      
                 
                 .reportimage {
-                    height: 90%;
-                    width: 70%;
+                    height: 30vh;
+                    width: 80%;
                     background-color: white;
                     justify-content: center;
                     align-items: center;
@@ -811,7 +811,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
                     display: flex;
                 }
                 .reportdetails {
-                    height: 90%;
+                    height: 30vh;
                     width: 90%;
                     background-color: white;
                     display: flex;
@@ -820,7 +820,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
                     flex-direction: column;
                     border-radius: 20px;
                     margin: 0px 0px 0px 0px;
-                    font-size: 1.2rem;
+                    font-size: clamp(1rem, 2.5vw, 5rem); 
                     
                     
                   
