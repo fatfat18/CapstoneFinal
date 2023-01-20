@@ -39,7 +39,15 @@
         .logintitle {
           color: black; 
           letter-spacing: 1px; 
-          font-size: 4.5vh;
+          font-size: 4rem;
+          font-family: century gothic;
+
+        }
+
+        .logintitle h2{
+          color: black; 
+          letter-spacing: 1px; 
+          font-size: 5rem;
           font-family: century gothic;
 
         }
@@ -86,69 +94,7 @@
           color: white;
         }
 
-        .inputbox2 {
-              position: relative;
-              width: 500px;
-              margin-bottom: 40px;
-              font-family: century gothic;
-              font-size: 30px;
-              letter-spacing: 4px;
-            }
-            
-            .inputbox2 input {
-              position: relative;
-              width: 100%;
-              padding: 20px 10px 10px;
-              background: transparent;
-              outline: none;
-              box-shadow: none;
-              border: none;
-              color: white;
-              font-size: .7em;
-              letter-spacing: 0.05em;
-              transition: 0.5s;
-              z-index: 10;
-              letter-spacing: 2px;
-            }
-            
-            .inputbox2 span {
-              position: absolute;
-              left: 0;
-              padding: 20px 10px 10px;
-              font-size: .7em;
-              color: #8f8f8f;
-              letter-spacing: 00.05em;
-              transition: 0.5s;
-              pointer-events: none;
-            
-            }
-            
-            .inputbox2 input:valid ~span,
-            .inputbox2 input:focus ~span {
-              color: black;
-              transform: translateX(-10px) translateY(-40px);
-              font-size: .1em;
-              font-size: 25px;
-            }
-            
-            .inputbox2 i {
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              width: 100%;
-              height: 2px;
-              background: rgb(255, 0, 0);
-              border-radius: 4px;
-              transition: 0.5s;
-              pointer-events: none;
-              z-index: 9;
-            }
-            
-            .inputbox2 input:valid ~i,
-            .inputbox2 input:focus ~i {
-              height: 44px;
-            }
-
+        
 
 
         
@@ -225,8 +171,88 @@
             }
 
 
+            .inputbox2 {
+              position: relative;
+              width: 500px;
+              margin-bottom: 40px;
+              font-family: century gothic;
+              font-size: 30px;
+              letter-spacing: 4px;
+            }
+            
+            .inputbox2 input {
+              position: relative;
+              width: 100%;
+              padding: 20px 10px 10px;
+              background: transparent;
+              outline: none;
+              box-shadow: none;
+              border: none;
+              color: white;
+              font-size: .7em;
+              letter-spacing: 0.05em;
+              transition: 0.5s;
+              z-index: 10;
+              letter-spacing: 2px;
+            }
+            
+            .inputbox2 span {
+              position: absolute;
+              left: 0;
+              padding: 20px 10px 10px;
+              font-size: .7em;
+              color: #8f8f8f;
+              letter-spacing: 00.05em;
+              transition: 0.5s;
+              pointer-events: none;
+            
+            }
+            
+            .inputbox2 input:valid ~span,
+            .inputbox2 input:focus ~span {
+              color: black;
+              transform: translateX(-10px) translateY(-40px);
+              font-size: .1em;
+              font-size: 25px;
+            }
+            
+            .inputbox2 i {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: rgb(255, 0, 0);
+              border-radius: 4px;
+              transition: 0.5s;
+              pointer-events: none;
+              z-index: 9;
+            }
+            
+            .inputbox2 input:valid ~i,
+            .inputbox2 input:focus ~i {
+              height: 44px;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             .logincontent{
               display: flex;
+              width: 100%;
               justify-content: center;
               align-items: center;
               text-align: center;
@@ -237,11 +263,14 @@
 
 
           .subpage {
-          height: 300px;
+          height: 30%;
           width: 100%;
           background-color: rgb(20, 20, 20);
           font-family: century gothic;
           display: flex;
+          justify-content: center;
+          padding-top: 100px;
+        
         
     
         }
@@ -371,7 +400,20 @@
 
 
 
-@media screen and (max-width: 800px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-device-width: 800px) {
 
   body {
     margin: 0;
@@ -379,63 +421,373 @@
   }
   
   .container {
-          height: 550px;
+          height: 60%;
           width: 100%;
           background-color: rgb(255, 255, 255);
           display: flex;
           justify-content: center;
           align-items: center;
           text-align: center;
-          padding-bottom: 70px;
+        
+          background-color: #FA0F0C;
     }
 
         .mainpage {
-          height: 500px;
+          height: 100%;
           width: 100%;
           background-color: rgb(255, 255, 255);
   
         }
 
         .mainpage h2 {
-          font-size: 50px;
+          font-size: 5rem;
           font-weight: 200;
         }
         
         
 
-        .subpage {
-          height: 550px;
+
+
+
+        
+        
+
+          .logintitle {
+          color: black; 
+          letter-spacing: 1px; 
+          height: 20vh;
           width: 100%;
-          background-color: rgb(20, 20, 20);
+          font-family: century gothic;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          font-size: clamp(1rem,2.5vw,4rem);
+
+        }
+
+        .logintitle h2{
+          color: black; 
+          letter-spacing: 1px; 
+          font-size: clamp(1rem,2.5vw,4rem);
           font-family: century gothic;
 
+        }
+
+
+
+        .inputbox {
+              position: relative;
+              width: 80vw;
+              margin-bottom: 50px;
+              font-family: century gothic;
+              font-size: clamp(3rem,2.5vw,5rem);
+              letter-spacing: 4px;
+            }
+
+            .inputbox input {
+              position: relative;
+              width: 80vw;
+              padding: 20px 10px 10px;
+              background: transparent;
+              outline: none;
+              box-shadow: none;
+              border: none;
+              color: white;
+              font-size: clamp(3rem,2.5vw,5rem);
+              letter-spacing: 0.05em;
+              transition: 0.5s;
+              z-index: 10;
+              letter-spacing: 2px;
+            }
+
+            .inputbox span {
+              position: absolute;
+              left: 0;
+              padding: 20px 10px 10px;
+              font-size: clamp(3rem,2.5vw,5rem);
+              color: #8f8f8f;
+              letter-spacing: 00.05em;
+              transition: 0.5s;
+              pointer-events: none;
+            }
+
+            .inputbox input:valid ~span,
+            .inputbox input:focus ~span {
+              color: black;
+              transform: translateX(-10px) translateY(-70px);
+              font-size: .1em;
+              font-size: clamp(3rem,2.5vw,5rem);
+            }
+
+            .inputbox i {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: rgb(255, 0, 0);
+              border-radius: 4px;
+              transition: 0.5s;
+              pointer-events: none;
+              z-index: 9;
+            }
+
+            .inputbox input:valid ~i,
+            .inputbox input:focus ~i {
+              height: 3.5vh;
+            }
+
+
+
+
+
+
+
+
+
+
+            
+        .inputbox2 {
+              position: relative;
+              width: 80vw;
+              margin-bottom: 50px;
+              font-family: century gothic;
+              font-size: clamp(3rem,2.5vw,5rem);
+              letter-spacing: 4px;
+            }
+
+            .inputbox2 input {
+              position: relative;
+              width: 80vw;
+              padding: 20px 10px 10px;
+              background: transparent;
+              outline: none;
+              box-shadow: none;
+              border: none;
+              color: white;
+              font-size: clamp(3rem,2.5vw,5rem);
+              letter-spacing: 0.05em;
+              transition: 0.5s;
+              z-index: 10;
+              letter-spacing: 2px;
+            }
+
+            .inputbox2 span {
+              position: absolute;
+              left: 0;
+              padding: 20px 10px 10px;
+              font-size: clamp(3rem,2.5vw,5rem);
+              color: #8f8f8f;
+              letter-spacing: 00.05em;
+              transition: 0.5s;
+              pointer-events: none;
+            }
+
+            .inputbox2 input:valid ~span,
+            .inputbox2 input:focus ~span {
+              color: black;
+              transform: translateX(-10px) translateY(-70px);
+              font-size: .1em;
+              font-size: clamp(3rem,2.5vw,5rem);
+            }
+
+            .inputbox2 i {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: rgb(255, 0, 0);
+              border-radius: 4px;
+              transition: 0.5s;
+              pointer-events: none;
+              z-index: 9;
+            }
+
+            .inputbox2 input:valid ~i,
+            .inputbox2 input:focus ~i {
+              height: 3.5vh;
+            }
+
+            .button {
+         padding: -0.8em 1.8em;
+         border: 2px solid #ff0000;
+         position: relative;
+         overflow: hidden;
+         background-color: transparent;
+         text-align: center;
+         text-transform: uppercase;
+         font-size: clamp(2rem,2.5vw,5rem);
+         font-weight: 1000;
+         transition: .3s;
+         z-index: 1;
+         font-family: inherit;
+         color: #ff0000;
+         height: 4vh;
+         width: 80vw;
+         font-family: century gothic;
+         letter-spacing: 3px;
+         
+        }
+
+        .button::before {
+         content: '';
+         width: 0;
+         height: 1000%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%) rotate(45deg);
+         background: rgb(248, 60, 60);
+         transition: .5s ease;
+         display: block;
+         z-index: -1;
+        }
+
+        .button:hover::before {
+         width: 105%;
+        }
+
+        .button:hover {
+          color: white;
+        }
+
+
+
+        
+
+          .forgotpassword {
+          letter-spacing: 1px;
+          font-size: clamp(1rem,2.5vw,5rem);
+          color: #ff0000;
+          font-weight: 800;
+          cursor: pointer;
+          font-family: century gothic;
+          position: relative;
+          border: none;
+          background: none;
+          text-transform: uppercase;
+          transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition-duration: 400ms;
+          transition-property: color;
+        }
+
+        .forgotpassword:focus,
+        .forgotpassword:hover {
+          color: rgb(255, 0, 0);
+        }
+
+        .forgotpassword:focus:after,
+        .forgotpassword:hover:after {
+          width: 100%;
+          left: 0%;
+        }
+        .forgotpassword:after {
+          content: "";
+          pointer-events: none;
+          bottom: 10px;
+          left: 50%;
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          background-color: rgb(255, 0, 0);
+          transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition-duration: 400ms;
+          transition-property: width, left;
+        }
+
+
+
+
+
+
+
+
+
+        .subpage {
+          height: 40vh;
+          width: 100%;
+          padding-top: 0px;
+          background-color: rgb(20, 20, 20);
+          font-family: century gothic;
+          display: flex;
+          justify-content: center;
+          align-items:center;
         
     
         }
         .subpagecontent{
-          height: 500px;
+          height: 10vh;
           width: 100%;
+          
           justify-content:center;
           align-items:center;
           text-align:center;
           letter-spacing: .5px;
-          padding-top: 20px;
+          font-size: clamp(2rem,2.5vw,5rem);
         }
 
 
-          .inputbox{
-            width: 400px;
-           
-          }
-          .inputbox2{
-            width: 400px;
-           
-          }
-          .button {
-            width: 400px;
-          }
-        
-        
+
+
+                /* From uiverse.io by @satyamchaudharydev */
+        /* === removing default button style ===*/
+        .buttonreg {
+          margin: 0;
+          background: transparent;
+          padding: 0;
+          border: none;
+          color: black;
+        }
+
+        /* button styling */
+        .buttonreg {
+          --border-right: 6px;
+          --text-stroke-color: rgb(255, 255, 255);
+          --animation-color: #ff3737;
+          --fs-size: 2em;
+          letter-spacing: 3px;
+          text-decoration: none;
+          font-size: var(--fs-size);
+          font-family: "century gothic";
+          position: relative;
+          text-transform: uppercase;
+          color: white;
+          -webkit-text-stroke: 1px var(--text-stroke-color);
+          text-decoration: none;
+        }
+        /* this is the text, when you hover on button */
+        .hover-text {
+          position: absolute;
+          box-sizing: border-box;
+          content: attr(data-text);
+          color: var(--animation-color);
+          width: 0%;
+          inset: 0;
+          border-right: var(--border-right) solid var(--animation-color);
+          overflow: hidden;
+          transition: .5s;
+          -webkit-text-stroke: 1px var(--animation-color);
+        }
+        /* hover */
+        .buttonreg:hover .hover-text {
+          width: 100%;
+          filter: drop-shadow(0 0 23px var(--animation-color))
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -515,7 +867,8 @@
             </svg>
           
                     
-            Account</h2> <h2 style="color:red; font-family: century gothic;font-size:20px; letter-spacing: 1px; font-weight:1000;" >{{ msg }} </h2>
+            Account</h2> 
+            <h2 style="color:red; font-family: century gothic;font-size:20px; letter-spacing: 1px; font-weight:1000;" >{{ msg }} </h2>
           <form method="post">
             {% csrf_token %}
 
@@ -558,8 +911,8 @@
 
 
           <div class="subpagecontent" style="color: white ;">
-            <h1 style="font-size:30px;"> New Here? </h1>
-            <h6 style="font-size:20px;"> Sign Up and Start Securing your home with us now! With the use of an IoT device Home Security with Facial Recognition! </h6>
+            <p> New Here? </h1>
+            <p> Sign Up and Start Securing your home with us now! With the use of an IoT device Home Security with Facial Recognition! </p>
             
             <a href="/signup" style="text-decoration: none ;"> <button data-text="Awesome" class="buttonreg">
               <span class="actual-text">&nbsp;REGISTER&nbsp;</span>
