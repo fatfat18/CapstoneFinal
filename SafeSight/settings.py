@@ -63,7 +63,7 @@ ROOT_URLCONF = 'SafeSight.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [''],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,6 +90,9 @@ DATABASES = {
         'USER' : 'root' ,
         'PASSWORD' : '' ,
         'PORT' : '3306' ,
+        'OPTIONS':{
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+    }
         
         },
     }
@@ -150,3 +153,4 @@ EMAIL_USE_TLS = True
 
 PASSWORD_RESET_TIMEOUT = 14400
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

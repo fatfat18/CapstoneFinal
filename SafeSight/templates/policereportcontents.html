@@ -500,8 +500,6 @@
                               width: 50%;
                               height: 50%;
                               text-align: center;
-                              border: solid 2px black;
-                              border-radius: 5px;
                            
                             }
 
@@ -1056,16 +1054,7 @@ height: 90vh;
     
                  </div>  
                     
-                 <div class="options">
-                    
-                
-                 
-                <a href="" ><div class="option-list">
-                        Profile
-                    </div> 
-                </a>
-
-                </div>
+    
     
                         <div class="logout">
                             <a href="/signout" ><button class="buttonlogout">LOGOUT</button></a>
@@ -1097,7 +1086,7 @@ height: 90vh;
                                 </div>
                                 <div class="reportdetails">
                                     <h1> HOUSEOWNER</h1>
-
+                                        <p style="color:green; font-size: 3rem;">Report VALIDATED by Homeowner!</p>
                                     <p>
                                         NAME : DENNIS JUGALBOT
                                     </p>
@@ -1110,78 +1099,7 @@ height: 90vh;
                                     <p>
                                         DATE AND TIME : OCTOBER 17, 2022 11:59 PM          
                                     </p>
-                              
-                                    <div class="reportbuttoncontainer">
-
-                                        <div class="reportbutton2">
-
-                                            <button class="reportbutton" id="confirmreportbutton" > <span style="color: white;">REPORT</span>
-                                            </button>
-
-                                            <div id="myModal" class="confirmreport">
-
-                                                <div  class="confirmreportcontents">
-                                                    <span class="close">&times;</span>
-                                                            <p>Please confirm your <span style="color:red;">Police Report</span> Submission! This will be Forwarded in <span style="color:red;">El Salvador Police Department!<span></p>
-                                                            <button class="reportbutton" id="confirmed" style="width:50% ;"> <span style="color: white;">CONFIRM REPORT</span>
-                                                            </button>
-                                                </div>
-                                                
-                                            </div>
-                                            <script>
-                                                // Get the modal
-                                                    var modal = document.getElementById("myModal");
-                                                                                                
-                                                    // Get the button that opens the modal
-                                                    var btn = document.getElementById("confirmreportbutton");
-
-                                                    // Get the button that opens the modal
-                                                    var confirmed = document.getElementById("confirmed");
-                                                                                                
-                                                    // Get the <span> element that closes the modal
-                                                    var span = document.getElementsByClassName("close")[0];
-                                                    
-                                                    // When the user clicks the button, open the modal 
-                                                    btn.onclick = function() {
-                                                     
-                                                      modal.style.display = "block";
-                                                    }
-                                                    
-                                                    // When the user clicks on <span> (x), close the modal
-                                                    span.onclick = function() {
-                                                      modal.style.display = "none";
-                                                    }
-
-                                                    confirmed.onclick = function() {
-                                                      modal.style.display = "none";
-                                                    }
-
-                                                    
-                                                    // When the user clicks anywhere outside of the modal, close it
-                                                    window.onclick = function(event) {
-                                                      if (event.target == modal) {
-                                                        modal.style.display = "none";
-                                                      }
-                                                    }
-
-                                            </script>
-
-
-
-
-
-                                        </div>
-                                        <a href="/dashboard"><div class="ignorebutton2">
-                                            <button class="ignorebutton"> <span>IGNORE</span>
-                                            </button>
-                                        </div>
-                                    </a>
-
-                                    </div>
-
-                                    
-                                    
-
+                        
 
 
                                 </div>

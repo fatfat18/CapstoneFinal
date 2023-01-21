@@ -1,0 +1,804 @@
+
+<html>
+    <head>
+    <style>
+                body {
+                    font-family: century-gothic;
+                    background: url("/static/img/signupback.jpg")  no-repeat fixed;
+                    background-repeat:no-repeat;
+                    background-size: 100% 100%;
+                    object-fit: contain;
+                    margin: 0;
+                    overflow-x: hidden;
+                }
+                a  {
+                    text-decoration: none;
+                }
+    
+                .mainpage {
+    
+                    width: 100%;
+                    height: 100vh;
+                 display: flex;
+                 flex-direction: column;
+           
+        
+                    
+                }
+                .navbar {
+    
+                    height: 80px;
+                    width: 100%;
+                    background: rgba(255,255,255,.5);
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgb(0, 0, 0);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+    
+    
+    
+    
+                .contents {
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                border-radius: 20px ;
+            
+    
+                }
+    
+    
+    
+               .accountpane{
+                    width: 33.3%;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                 
+                    }
+                    
+    
+                .userinfo{
+    
+                    font-size: 3rem;
+                    font-family: century gothic;
+                    color: black;
+                    font-weight: 1000;
+                    margin-left: 20px;
+                    padding-top: 5px;
+    
+                
+                
+                }
+    
+                .profpicture {
+                    width: 70px;
+                    height: 70px;
+                    margin-top: 5px;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    border-radius: 20px;
+                    font-family: century gothic;
+                    font-weight: 1000;
+                    margin-left: 5px;
+                    
+                          
+               }
+    
+    
+    
+    
+    
+                    
+                    .logout {
+                        width: 33.3%;
+                        height: 80px;
+                        display: flex;
+                        justify-content: center;
+                        padding-right: 40px;
+                        align-items: center;
+                   
+                
+                    }
+    
+    
+                    .buttonlogout {
+                     --color: #ad0b0b;
+                     font-family: inherit;
+    
+                     width: 8em;
+                     height: 2.6em;
+                     line-height: 2.5em;
+                     position: relative;
+                     overflow: hidden;
+                     border: 2px solid var(--color);
+                     transition: color .5s;
+                     z-index: 1;
+                     font-size: 17px;
+                     border-radius: 6px;
+                     font-weight: 1000;
+                     color: var(--color);
+                     font-family: century gothic;
+                        
+                     
+                    }
+                    
+                    .buttonlogout:before {
+                     content: "";
+                     position: absolute;
+                     z-index: -1;
+                     background: var(--color);
+                     height: 150px;
+                     width: 200px;
+                     border-radius: 50%;
+                    }
+                    
+                    .buttonlogout:hover {
+                     color: #fff;
+                    }
+                    
+                    .buttonlogout:before {
+                     top: 100%;
+                     left: 100%;
+                     transition: all .7s;
+                    }
+                    
+                    .buttonlogout:hover:before {
+                     top: -30px;
+                     left: -30px;
+                    }
+                    
+                    .buttonlogout:active:before {
+                     background: #a30c0c;
+                     transition: background 0s;
+                    }
+    
+                    .metrics {
+    
+                        height: 200px;
+                        width: 70%;
+                        display: flex;
+                        align-items: center;
+                        
+                        border-radius: 40px;
+                        font-family: century gothic;
+                        font-size: 20px;
+                        font-weight: 1000;
+                     
+                        justify-content:space-evenly;
+                        
+                        
+                    }
+    
+                    .metriccontents {
+    
+                    height: 150px;
+                    width: 30%;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                   
+    
+                    }
+               
+    
+    
+                                    
+                    
+                    .dashboardcontainer {
+                    height: 70%;
+                    width: auto;
+                    /* background: url("/static/img/backgcontents.jpg"); */
+                    background-position: 50% 50%;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    padding-top: 10px;
+                    align-items: center;
+              
+                    font-family: century gothic;
+                    
+        
+                    font-size: clamp(.5rem, 2.5vw, 1rem); 
+            
+                
+                    font-weight: 1000;
+                    overflow-y:auto;
+                    padding-top: 20px;
+                    overflow-y: scroll;
+                 
+               
+    
+                    }
+    
+                    .dashboardcontents {
+                    height: 10vh;
+                    width: 50vw;
+                    margin-top: 0px;
+                    background: rgba(255,255,255,0.9);
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(1px);
+                    border: 1px solid rgba(255,255,255,0.45);
+                    display: flex;
+                    justify-content: space-around;
+                    overflow-x: hidden;
+                    
+                    letter-spacing: 1px;
+                    font-size: 1.1em;
+                    cursor: pointer;
+                    background: rgba(0,0,0,0.7);
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid white;
+                    color: #fff;
+                    border-radius: 5px;
+                    transition: all .3s;
+                    border-radius: 15px;
+    
+                    align-items: center;
+                    text-align: center;
+                 
+    
+                    }
+    
+             
+    
+                    .dashboardcontents:hover {
+                     border-radius: 5px;
+                     transform: translateY(-10px);
+                     box-shadow: 0 7px 0 -2px #ffffff,
+                      0 15px 0 -4px #a3a3a3,
+                      0 16px 10px -3px #a3a3a3;
+                    }
+    
+                    .dashboardcontents:active {
+                     transition: all 0.2s;
+                     transform: translateY(-5px);
+                     box-shadow: 0 2px 0 -2px #ffffff,
+                      0 8px 0 -4px #a3a3a3,
+                      0 12px 10px -3px #a3a3a3;
+                    }   
+    
+                    .dashboardtimeanddate {
+                  
+                        font-size: clamp(.5rem, 2.5vw, 1.5rem);
+                    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @media only screen and (max-device-width: 800px) {
+    
+        body{ font-size: 1rem;}
+    
+        .navbar {
+    
+            height: 23vh;
+            width: 101%;
+            background: rgba(255,255,255,.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+          
+            justify-content: center;
+            align-items: center;
+            }
+    
+    
+    
+    
+            .contents {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            border-radius: 20px ;
+            
+            
+            }
+    
+    
+    
+            .accountpane{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        
+            
+            }
+    
+    
+            .userinfo{
+            
+            font-size: 5rem;
+            font-family: century gothic;
+            color: black;
+            font-weight: 1000;
+            margin-left: 20px;
+            padding-top: 5px;
+            
+            
+            
+            }
+    
+            .profpicture {
+            width: 100px;
+            height: 100px;
+            margin-top: 5px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 100px;
+            font-family: century gothic;
+            font-weight: 1000;
+            margin-left: 5px;
+            
+    
+            }
+    
+
+    
+    
+    
+    
+            .logout {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              
+                margin: 0px;
+                padding: 0px;
+         
+               
+               
+               
+            
+            
+            }
+    
+    
+            .buttonlogout {
+             --color: #ad0b0b;
+             font-family: inherit;
+            
+             width: 12em;
+             height: 4em;
+             line-height: 2.5em;
+         
+             overflow: hidden;
+             border: 2px solid var(--color);
+             transition: color .5s;
+             z-index: 1;
+             font-size: 17px;
+             border-radius: 6px;
+             font-weight: 1000;
+             color: var(--color);
+             font-family: century gothic;
+    
+            
+            }
+    
+    
+    
+    
+            .metrics {
+                        
+                height: 200px;
+                width: 95%;
+                display: flex;
+                align-items: center;
+                        
+                border-radius: 40px;
+                font-family: century gothic;
+                font-size: 1rem;
+                font-weight: 1000;
+                        
+                justify-content:space-evenly;
+                        
+                        
+                }
+                
+                .metriccontents {
+                
+                height: 150px;
+                width: 40%;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                border-radius: 20px;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                
+                
+                }
+    
+    
+    
+                .dashboardcontainer {
+                    height: 70%;
+                    width: 90vw;
+                    /* background: url("/static/img/backgcontents.jpg"); */
+                    background-position: 100% 100%;
+                    background-repeat:inherit;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    padding-top: 10px;
+                    align-items: center;
+              
+                    font-family: century gothic;
+                    
+        
+                    font-size: clamp(.5rem, 2.5vw, 1rem); 
+            
+                
+                    font-weight: 1000;
+                    overflow-y:auto;
+                    padding-top: 20px;
+                    overflow-y: scroll;
+                 
+               
+    
+                    }
+    
+                    .dashboardcontents {
+                    height: 10vh;
+                    width: 80vw;
+                    margin-top: 0px;
+                    background: rgba(255,255,255,0.9);
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(1px);
+                    border: 1px solid rgba(255,255,255,0.45);
+                    display: flex;
+                    justify-content: space-around;
+                    overflow-x: hidden;
+                    
+                    letter-spacing: 1px;
+                    font-size: clamp(.5rem, 2.5vw, 2rem); 
+                    cursor: pointer;
+                    background: rgba(0,0,0,0.7);
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid white;
+                    color: #fff;
+                    border-radius: 5px;
+                    transition: all .3s;
+                    border-radius: 15px;
+    
+                    align-items: center;
+                    text-align: center;
+                 
+    
+                    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            </style>
+            </head>
+    <body>
+    
+    
+            <div class="mainpage"> 
+    
+    
+                <div class="navbar">
+    
+                <div class="accountpane">
+                    <div class="profpicture">
+                        PROFILE <br>PIC
+                        
+                    </div>
+    
+                    <div class="userinfo">{% block content %}
+    
+                        {% if user.is_authenticated %}
+                            {{ user.username }}
+                           
+                         {% else %}
+        
+                         {% endif %}
+                         {% endblock %}
+                         </div>
+    
+                 </div>  
+                    
+                       
+    
+                        <div class="logout">
+                            <a href="/signout" ><button class="buttonlogout">LOGOUT</button></a>
+                        </div>
+    
+                         
+                        
+                </div>
+    
+    
+                <div class="contents">
+    
+                        <div class="metrics">
+    
+                            <div class="metriccontents">
+                                TOTAL NUMBERS OF REPORTS  <br> <h1 style="color:red;"> 153 </h1>
+                              
+    
+                            </div>
+                            <div class="metriccontents">
+                                REPORT COUNT FOR THE MONTH<br> <h1 style="color:red;"> 14</h1>
+                                
+                            </div>
+    
+    
+    
+                        </div>
+    
+                        <div class="dashboardcontainer">
+    
+                                    <a href="/reportcontents" class="">
+                                    <div class="dashboardcontents">
+    
+                                    <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                    <div class="dashboardtimeanddate">OCTOBER 27, 2022 11:50 P.M.</div> 
+    
+                                    </div>
+                                    </a>
+    
+    
+                                    
+                                    <a href="/reportcontents" class="">
+                                    <div class="dashboardcontents">
+    
+                                    <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                    <div class="dashboardtimeanddate">OCTOBER 25, 2022 11:50 P.M.</div> 
+    
+                                    </div>
+                                    </a>
+    
+    
+    
+    
+                                    <a href="/reportcontents" class="">
+                                    <div class="dashboardcontents">
+    
+                                    <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                    <div class="dashboardtimeanddate">OCTOBER 22, 2022 11:50 P.M.</div> 
+    
+                                    </div>
+                                    </a>
+    
+    
+    
+    
+                                    <a href="/reportcontents" class="">
+                                    <div class="dashboardcontents">
+        
+                                    <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                    <div class="dashboardtimeanddate">OCTOBER 21, 2022 11:50 P.M.</div> 
+        
+                                    </div>
+                                    </a>
+    
+    
+    
+    
+                                    <a href="/reportcontents" class="">
+                                    <div class="dashboardcontents">
+    
+                                    <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                    <div class="dashboardtimeanddate">OCTOBER 20, 2022 11:50 P.M.</div> 
+    
+                                    </div>
+                                    </a>
+    
+    
+                                    <a href="/reportcontents" class="">
+                                        <div class="dashboardcontents">
+        
+                                        <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                        <div class="dashboardtimeanddate">OCTOBER 18, 2022 11:50 P.M.</div> 
+        
+                                        </div>
+                                    </a>
+    
+                                    <a href="/reportcontents" class="">
+                                        <div class="dashboardcontents">
+        
+                                        <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                        <div class="dashboardtimeanddate">OCTOBER 17, 2022 11:50 P.M.</div> 
+        
+                                        </div>
+                                    </a>
+    
+    
+                                    <a href="/reportcontents" class="">
+                                        <div class="dashboardcontents">
+        
+                                        <div> SAFESIGHT HOME SECURITY REPORT </div>  
+                                        <div class="dashboardtimeanddate">OCTOBER 15, 2022 11:50 P.M.</div> 
+        
+                                        </div>
+                                    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                        </div>
+    
+    
+    
+    
+    
+    
+    
+                </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            </div>
+    
+    
+    
+           
+    
+    
+    
+            </body>
+    </html>
+    
+    
+    
+    
+    

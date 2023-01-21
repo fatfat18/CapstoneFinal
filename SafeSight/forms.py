@@ -10,7 +10,8 @@ class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(label='Username', min_length=3, max_length=150)
     email = forms.EmailField(label='Email')  
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)  
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)  
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput) 
+
   
     def username_clean(self):  
         username = self.cleaned_data['username'].lower()  
@@ -34,14 +35,41 @@ class CustomUserCreationForm(UserCreationForm):
             raise ValidationError("Passwords don't match!")  
         return password2  
   
+
     def save(self, commit = True):  
         user = User.objects.create_user(  
             self.cleaned_data['username'],  
             self.cleaned_data['email'],  
-            self.cleaned_data['password1']  
+            self.cleaned_data['password1'],
         )
         return user  
 
     
 
+class updateform(CustomUserCreationForm):
+    first_name = forms.CharField(label='First Name', min_length=3, max_length=150)
+    last_name = forms.CharField(label='Last Name', min_length=3, max_length=150)
+    address = forms.CharField(label='Address', min_length=3, max_length=150)
   
+
+  
+    def first_name_clean(self):  
+        first_name = self.cleaned_data['first_name'].lower()  
+        new = User.objects.filter(first_name = first_name)   
+        return first_name 
+    def last_name_clean(self):  
+        last_name = self.cleaned_data['last_name'].lower()  
+        new = User.objects.filter(last_name = last_name)   
+        return last_name 
+    def address_clean(self):  
+        address = self.cleaned_data['address'].lower()  
+        new = User.objects.filter(address = address)   
+        return address 
+    
+    def save(self, commit = True):  
+        user = User.objects.create_user(  
+            self.cleaned_data['first_name'],  
+            self.cleaned_data['lastname'],  
+            self.cleaned_data['address'],  
+        )
+        return user  

@@ -1,0 +1,924 @@
+
+<html>
+    <head>
+    <style>
+                body {
+                    font-family: century-gothic;
+                    background: url("/static/img/signupback.jpg")  no-repeat fixed;
+                    background-repeat:no-repeat;
+                    background-size: 100% 100%;
+                    object-fit: contain;
+                    margin: 0;
+                    overflow-x: hidden;
+                }
+                a  {
+                    text-decoration: none;
+                }
+    
+                .mainpage {
+    
+                    width: 100%;
+                    height: 100vh;
+                 display: flex;
+                 flex-direction: column;
+           
+        
+                    
+                }
+                .navbar {
+    
+                    height: 80px;
+                    width: 100%;
+                    background: rgba(255,255,255,.5);
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgb(0, 0, 0);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+    
+    
+    
+    
+                .contents {
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                border-radius: 20px ;
+            
+    
+                }
+    
+    
+    
+               .accountpane{
+                    width: 33.3%;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                 
+                    }
+                    
+    
+                .userinfo{
+    
+                    font-size: 3rem;
+                    font-family: century gothic;
+                    color: black;
+                    font-weight: 1000;
+                    margin-left: 20px;
+                    padding-top: 5px;
+    
+                
+                
+                }
+    
+                .profpicture {
+                    width: 70px;
+                    height: 70px;
+                    margin-top: 5px;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    border-radius: 20px;
+                    font-family: century gothic;
+                    font-weight: 1000;
+                    margin-left: 5px;
+                    
+                          
+               }
+    
+    
+    
+    
+    
+    
+                .options {
+    
+                    height: 80px;
+                    width: 33.3%;
+           
+                    border: solid 1px;
+                    display: flex;
+                    text-align: center;
+                    
+                    justify-content:space-around;
+    
+                    align-items: center;
+            
+                    border: 0px;
+                    
+    
+    
+                 
+                }
+    
+                .option-list {
+    
+                    height: 40px;
+                    width: 200px;
+                    background-color: white;
+                    border: solid 1px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    font-family: century gothic;
+        
+    
+                  
+                
+                 
+    
+                  
+                    
+                    
+                   
+                    }
+    
+                    .option-list {
+            
+                    letter-spacing: 1px;
+                     border: unset;
+                     border-radius: 15px;
+                     color: #212121;
+                     z-index: 1;
+                     background: #e8e8e8;
+                     position: relative;
+                     font-weight: 1000;
+                     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     transition: all 250ms;
+                     overflow: hidden;
+                     font-size: 1rem;
+                    
+                    }
+                    
+                    .option-list::before {
+                     content: "";
+                     position: absolute;
+                     top: 0;
+                     left: 0;
+                     height: 100%;
+                     width: 0;
+                     border-radius: 15px;
+                     background-color: #212121;
+                     z-index: -1;
+                     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                     transition: all 250ms;
+                     
+                    }
+                    
+                    .option-list:hover {
+                     color: #e8e8e8;
+                    }
+                    
+                    .option-list:hover::before {
+                     width: 100%;
+                    }
+    
+    
+    
+    
+                    
+                    .logout {
+                        width: 33.3%;
+                        height: 80px;
+                        display: flex;
+                        justify-content: center;
+                        padding-right: 40px;
+                        align-items: center;
+                   
+                
+                    }
+    
+    
+                    .buttonlogout {
+                     --color: #ad0b0b;
+                     font-family: inherit;
+    
+                     width: 8em;
+                     height: 2.6em;
+                     line-height: 2.5em;
+                     position: relative;
+                     overflow: hidden;
+                     border: 2px solid var(--color);
+                     transition: color .5s;
+                     z-index: 1;
+                     font-size: 17px;
+                     border-radius: 6px;
+                     font-weight: 1000;
+                     color: var(--color);
+                     font-family: century gothic;
+                        
+                     
+                    }
+                    
+                    .buttonlogout:before {
+                     content: "";
+                     position: absolute;
+                     z-index: -1;
+                     background: var(--color);
+                     height: 150px;
+                     width: 200px;
+                     border-radius: 50%;
+                    }
+                    
+                    .buttonlogout:hover {
+                     color: #fff;
+                    }
+                    
+                    .buttonlogout:before {
+                     top: 100%;
+                     left: 100%;
+                     transition: all .7s;
+                    }
+                    
+                    .buttonlogout:hover:before {
+                     top: -30px;
+                     left: -30px;
+                    }
+                    
+                    .buttonlogout:active:before {
+                     background: #a30c0c;
+                     transition: background 0s;
+                    }
+    
+    
+                                    
+                    
+                    .dashboardcontainer {
+                    height: 60vh;
+                    width: 70%;
+                    /* background: url("/static/img/backgcontents.jpg"); */
+                    background-position: 50% 50%;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    padding-top: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;
+                    font-family: century gothic;
+                    
+        
+                    font-size: clamp(.5rem, 2.5vw, 1rem); 
+            
+                
+                    font-weight: 1000;
+                    overflow-y:auto;
+                    padding-top: 20px;
+   
+                 
+               
+    
+                    }
+    
+                    .backbuttoncontainer {
+                                            
+                        width:90%;
+                        height: 1vh;
+                                            
+                                            
+                        }
+                        .backbutton {
+                        
+                        position: relative;
+                        margin: auto;
+                        padding: 12px 18px;
+                        transition: all 0.2s ease;
+                        border: none;
+                        background: none;
+                        padding-left: 30px;
+                        
+                        
+                        
+                        
+                        
+                        }
+                        
+                        .backbutton:before {
+                        border: solid 5px white;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        border-radius: 50px;
+                        background: #ff0000;
+                        width: 110px;
+                        height: 45px;
+                        transition: all 0.3s ease;
+                        
+                        }
+                        
+                        .backbutton span {
+                        position: relative;
+                        font-family: century gothic;
+                        font-size: 1rem;
+                        font-weight: 800;
+                        letter-spacing: 0.05em;
+                        color: #ffffff;
+                        
+                        
+                        }
+                        
+                        .backbutton svg {
+                        position: relative;
+                        top: 0;
+                        fill: none;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke: #ffffff;
+                        stroke-width: 6;
+                        transition: all 0.09s ease;
+                        
+                        }
+                        
+                        .backbutton:hover:before {
+                        
+                        background: #ff0000;
+                        }
+                        
+                        .backbutton:active svg {
+                        transform: translateX(-10px);
+                        }
+                        
+                        .backbutton:active {
+                        transform: scale(0.95);
+                        
+                        }   
+                    
+                        .editprofilebutton {
+                          font-weight: bold;
+                          color: white;
+                          border-radius: 2rem;
+                          width: 95.02px;
+                          height: 42.66px;
+                          border: none;
+                          background-color: #3653F8;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
+
+                        .editprofilebutton .span-mother {
+                          display: flex;
+                          overflow: hidden;
+                        }
+
+                        .editprofilebutton:hover .span-mother {
+                          position: absolute;
+                        }
+
+                        .editprofilebutton:hover .span-mother span {
+                          transform: translateY(1.2em);
+                        }
+
+                        .editprofilebutton .span-mother span:nth-child(1) {
+                          transition: .2s;
+                        }
+
+                        .editprofilebutton .span-mother span:nth-child(2) {
+                          transition: .3s;
+                        }
+
+                        .editprofilebutton .span-mother span:nth-child(3) {
+                          transition: .4s;
+                        }
+
+                        .editprofilebutton .span-mother span:nth-child(4) {
+                          transition: .5s;
+                        }
+
+                        .editprofilebutton .span-mother span:nth-child(5) {
+                          transition: .6s;
+                        }
+
+                        .editprofilebutton .span-mother span:nth-child(6) {
+                          transition: .7s;
+                        }
+
+                        .editprofilebutton .span-mother2 {
+                          display: flex;
+                          position: absolute;
+                          overflow: hidden;
+                        }
+
+                        .editprofilebutton .span-mother2 span {
+                          transform: translateY(-1.2em);
+                        }
+
+                        .editprofilebutton:hover .span-mother2 span {
+                          transform: translateY(0);
+                        }
+
+                        .editprofilebutton .span-mother2 span {
+                          transition: .2s;
+                        }
+
+                        .editprofilebutton .span-mother2 span:nth-child(2) {
+                          transition: .3s;
+                        }
+
+                        .editprofilebutton .span-mother2 span:nth-child(3) {
+                          transition: .4s;
+                        }
+
+                        .editprofilebutton .span-mother2 span:nth-child(4) {
+                          transition: .5s;
+                        }
+
+                        .editprofilebutton .span-mother2 span:nth-child(5) {
+                          transition: .6s;
+                        }
+
+                        .editprofilebutton .span-mother2 span:nth-child(6) {
+                          transition: .7s;
+                        }
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @media only screen and (max-device-width: 800px) {
+    
+        body{ font-size: 1rem;}
+    
+        .navbar {
+    
+            height: 23vh;
+            width: 101%;
+            background: rgba(255,255,255,.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+          
+            justify-content: center;
+            align-items: center;
+            }
+    
+    
+    
+    
+            .contents {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            border-radius: 20px ;
+            
+            
+            }
+    
+    
+    
+            .accountpane{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        
+            
+            }
+    
+    
+            .userinfo{
+            
+            font-size: 5rem;
+            font-family: century gothic;
+            color: black;
+            font-weight: 1000;
+            margin-left: 20px;
+            padding-top: 5px;
+            
+            
+            
+            }
+    
+            .profpicture {
+            width: 100px;
+            height: 100px;
+            margin-top: 5px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 100px;
+            font-family: century gothic;
+            font-weight: 1000;
+            margin-left: 5px;
+            
+    
+            }
+    
+    
+    
+    
+    
+    
+            .options {
+            
+            height: 150px;
+            width: 100%;
+            
+            border: solid 1px;
+            display: flex;
+                
+            text-align: center;
+      
+            justify-content:center;
+            gap: 10px;
+            
+            align-items: center;
+            
+            border: 0px;
+       
+            
+            
+            
+            
+            }
+    
+            .option-list {
+            
+            height: 80px;
+            width: 300px;
+            background-color: white;
+            border: solid 1px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            font-family: century gothic;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            }
+    
+            .option-list {
+            
+            letter-spacing: 1px;
+             border: unset;
+             border-radius: 15px;
+             color: #212121;
+             z-index: 1;
+             background: #e8e8e8;
+             position: relative;
+             font-weight: 1000;
+             -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+             box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+             transition: all 250ms;
+             overflow: hidden;
+             font-size: clamp(.5rem, 2.5vw, 3rem); 
+            
+            }
+    
+            .option-list::before {
+             content: "";
+             position: absolute;
+             top: 0;
+             left: 0;
+             height: 100%;
+             width: 0;
+             border-radius: 15px;
+             background-color: #212121;
+             z-index: -1;
+             -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+             box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+             transition: all 250ms;
+            
+            }
+    
+            .option-list:hover {
+             color: #e8e8e8;
+            }
+    
+            .option-list:hover::before {
+             width: 100%;
+            }
+    
+    
+    
+    
+    
+            .logout {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              
+                margin: 0px;
+                padding: 0px;
+         
+               
+               
+               
+            
+            
+            }
+    
+    
+            .buttonlogout {
+             --color: #ad0b0b;
+             font-family: inherit;
+            
+             width: 12em;
+             height: 4em;
+             line-height: 2.5em;
+         
+             overflow: hidden;
+             border: 2px solid var(--color);
+             transition: color .5s;
+             z-index: 1;
+             font-size: 17px;
+             border-radius: 6px;
+             font-weight: 1000;
+             color: var(--color);
+             font-family: century gothic;
+    
+            
+            }
+    
+    
+    
+    
+          
+    
+                .dashboardcontainer {
+                    height: 70%;
+                    width: 90vw;
+                    /* background: url("/static/img/backgcontents.jpg"); */
+                    background-position: 100% 100%;
+                    background-repeat:inherit;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 20px;
+                    padding-top: 10px;
+                    align-items: center;
+              
+                    font-family: century gothic;
+                    
+        
+                    font-size: clamp(.5rem, 2.5vw, 1rem); 
+            
+                
+                    font-weight: 1000;
+                    overflow-y:auto;
+                    padding-top: 20px;
+                    overflow-y: scroll;
+                 
+               
+    
+                    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            </style>
+            </head>
+    <body>
+    
+    
+            <div class="mainpage"> 
+    
+    
+                <div class="navbar">
+    
+                <div class="accountpane">
+                    <div class="profpicture">
+                        PROFILE <br>PIC
+                        
+                    </div>
+    
+                    <div class="userinfo">{% block content %}
+    
+                        {% if user.is_authenticated %}
+                            {{ user.username }}
+                           
+                         {% else %}
+        
+                         {% endif %}
+                         {% endblock %}
+                         </div>
+    
+                 </div>  
+                    
+                        <div class="options">
+                        
+                         
+                         
+                        <a href="" ><div class="option-list">
+                                Profile
+                            </div> 
+                        </a>
+    
+                        </div>
+    
+                        <div class="logout">
+                            <a href="/signout" ><button class="buttonlogout">LOGOUT</button></a>
+                        </div>
+    
+                         
+                        
+                </div>
+    
+    
+                <div class="contents">
+    
+                    <a href="/dashboard" class="backbuttoncontainer" ><button class="backbutton">
+  
+                        <svg viewBox="0 0 20 10" height="10px" width="15px">
+                          <path d="M1,5 L25,5"></path>
+                          <polyline points="8 1 1 5 8 9"></polyline>
+                        </svg>
+                        <span>back</span>
+                      </button>
+                    </a>
+    
+                        <div class="dashboardcontainer">
+
+                    
+                            
+                           <a href="/editprofile"><button class="editprofilebutton">
+
+                                    <span class="span-mother">
+                                        <span>E</span>
+                                        <span>D</span>
+                                        <span>I</span>
+                                        <span>T</span>
+                                      
+                                    </span>
+                                    <span class="span-mother2">
+                                        <span>E</span>
+                                        <span>D</span>
+                                        <span>I</span>
+                                        <span>T</span>
+                                    
+                                    </span>
+                              
+
+
+
+                            </button>
+                        </a> 
+
+                         </div>
+    
+    
+    
+    
+                </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            </div>
+    
+    
+    
+           
+    
+    
+    
+            </body>
+    </html>
+    
+    
+    
+    
+    

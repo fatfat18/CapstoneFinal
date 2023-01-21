@@ -5,19 +5,27 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login , logout , get_user_model
 from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import HttpResponseRedirect
+from django.shortcuts import HttpResponseRedirect , render
 from django.contrib.auth import forms  
 from django.contrib import messages  
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm , updateform
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-
+from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 from .decorators import user_not_authenticated
 from .tokens import account_activation_token
+from .models import editupdaterecord
+
+
+from django.contrib.auth.models import User
+
+
+
+
 
 
 
@@ -46,6 +54,11 @@ def activate(request, uidb64, token):
 
 
 
+
+
+
+
+
 def activateEmail(request, user):
     mail_subject = "Activate your SafeSight Account."
     message = render_to_string("activate_account.html", {
@@ -55,13 +68,12 @@ def activateEmail(request, user):
         'token': account_activation_token.make_token(user),
         "protocol": 'https' if request.is_secure() else 'http'
     })
-    email = EmailMessage(mail_subject, message, to=[user.email])
+    email = EmailMessage(mail_subject, message, to=[user.email],)
     if email.send():
         messages.success(request, f'Dear <b>{user}</b>, please go to you email <b>{user.email}</b> inbox and click on \
                 received activation link to confirm and complete the registration. <b>Note:</b> Check your spam folder.')
     else:
         messages.error(request, f'Problem sending email to {user.email}, check if you typed it correctly.')
-
 
 
 
@@ -117,7 +129,7 @@ def signin(request):
         username = request.POST['username'].lower()
         password = request.POST['password'].lower()
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user is not None :
             login(request, user)
             return redirect('/dashboard') #profile
         else:
@@ -127,6 +139,51 @@ def signin(request):
     else:
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
+
+
+def editprofile(request,user):
+    if request.user.is_authenticated:
+        return render(request, 'editprofile.html')
+
+        
+        
+def update(request):
+    if request.method == 'POST':
+        form = updateform(request.POST)
+        if form.is_valid():
+            user = form.save()
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
+            address = form.cleaned_data.get('address')
+            user = authenticate(request, first_name=first_name, last_name=last_name,address=address)
+            user.save()
+            return redirect('/profile')
+
+
+
+
+@login_required
+def profile(request):
+    return render(request,'profile.html')
+
+@login_required
+def editprofile(request):
+    return render(request,'editprofile.html')
+
+def displaydata(request):
+    results=editupdaterecord.objects.all()
+    return render(request,"profile.html",{"editupdaterecord":results})
+
+
+
+
+
+
+
+
+
+
+
 
 
 def signout(request):
