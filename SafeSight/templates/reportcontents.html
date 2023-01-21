@@ -16,7 +16,7 @@
                 .mainpage {
 
                     width: 100%;
-                    height: 100vh;
+                    height: 97vh;
                                     
                                                      
                     }
@@ -248,24 +248,7 @@
                  transition: background 0s;
                 }
 
-
-    
-            .metrics {
-                height: 200px;
-                width: 97%;
-                display: flex;
-                padding: 20px;
-                border-radius: 40px;
-                font-family: century gothic;
-                font-size: 20px;
-                font-weight: 1000;
-                display: flex;
-                
-            }
-    
-          
-
-                                
+             
                 
                 .dashboardcontainer {
                 height: 80%;
@@ -351,6 +334,7 @@
                 .backbuttoncontainer {
 
                     width:90%;
+                    height: 1vh;
     
 
                 }
@@ -363,6 +347,7 @@
                  border: none;
                  background: none;
                  padding-left: 30px;
+                 
                  
                 
              
@@ -402,7 +387,7 @@
                  stroke-linecap: round;
                  stroke-linejoin: round;
                  stroke: #ffffff;
-                 stroke-width: 3;
+                 stroke-width: 6;
                  transition: all 0.09s ease;
                 
                 }
@@ -491,7 +476,52 @@
                     }
 
                 
+                            /* The Modal (background) */
+                            .confirmreport {
+                              display: none; /* Hidden by default */
+                              position: fixed; /* Stay in place */
+                              z-index: 1; /* Sit on top */
+                              padding-top: 100px; /* Location of the box */
+                              left: 0;
+                              top: 0;
+                              width: 100%; /* Full width */
+                              height: 100%; /* Full height */
+                              overflow: auto; /* Enable scroll if needed */
+                              background-color: rgb(0,0,0); /* Fallback color */
+                              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                            }
+                            
+                            /* Modal Content */
+                            .confirmreportcontents {
+                              background-color: #fefefe;
+                              margin: auto;
+                              padding: 20px;
+                              border: 1px solid #888;
+                              width: 50%;
+                              height: 50%;
+                              text-align: center;
+                           
+                            }
 
+                            .confirmreportcontents p {
+                                font-size: clamp(1rem,2.5vw,2rem);
+                            }
+                            
+                            /* The Close Button */
+                            .close {
+                              color: #aaaaaa;
+                              float: right;
+                              font-size: 28px;
+                              font-weight: bold;
+                          
+                            }
+                            
+                            .close:hover,
+                            .close:focus {
+                              color: #000;
+                              text-decoration: none;
+                              cursor: pointer;
+                            }
 
 
 
@@ -545,6 +575,14 @@
 
 body{ font-size: 1rem; overflow-x: hidden;}
 
+.mainpage {
+
+width: 100%;
+height: 90vh;
+                
+                                 
+}
+
 .navbar {
 
     height: 23vh;
@@ -571,7 +609,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 0px;
     border-radius: 20px ;
     
     
@@ -758,10 +796,11 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
 
              .dashboardcontainer {
-                height: 80%;
-                width: 90vw;
+                height: 90%;
+                width: 95%;
                 
-          
+                margin:0;
+                margin-top: 20px;
                 background-position: 50% 50%;
         
              
@@ -780,9 +819,15 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
                 }
 
+                .backbutton {
+                    margin-top: -50px;
+                
+                 
+                }
+
                 .report {
-                height: 90vh;
-                width: 80vw;
+                height: 95vh;
+                width: 95%;
               
                 background: rgba(97, 97, 97, 0.6);
                 -webkit-backdrop-filter: blur(20px);
@@ -801,7 +846,7 @@ body{ font-size: 1rem; overflow-x: hidden;}
                 
                 .reportimage {
                     height: 30vh;
-                    width: 80%;
+                    width: 100%;
                     background-color: white;
                     justify-content: center;
                     align-items: center;
@@ -809,10 +854,13 @@ body{ font-size: 1rem; overflow-x: hidden;}
                     margin: 20px;
                     border-radius: 20px;
                     display: flex;
+                    font-size: clamp(2rem,2.5vw,5rem);
+     
                 }
+                
                 .reportdetails {
-                    height: 30vh;
-                    width: 90%;
+                    height: 40vh;
+                    width: 100%;
                     background-color: white;
                     display: flex;
                     justify-content: center;
@@ -826,10 +874,75 @@ body{ font-size: 1rem; overflow-x: hidden;}
                   
                 }
 
+                .reportdetails p {
+                    
+                    font-size: clamp(1rem, 2.5vw, 5rem); 
+     
+                }
+
+                .reportdetails h1 {
+                    
+                    font-size: clamp(3rem, 2.5vw, 5rem);
+                    justify-content: center;
+                    text-align: center;
+     
+                }
 
 
 
-            }
+                .reportbutton {
+                     background: #ff0000;
+                     font-family: century gothic;
+                     padding: 0.6em 1.3em;
+                     font-weight: 700;
+                     font-size: 20px;
+                     border: 3px solid black;
+                     border-radius: 0.4em;
+                     box-shadow: 0.1em 0.1em;
+                    padding: 30px;
+                    width: 30vw;
+                    height: 5vh;
+                    margin-top: 50px;
+                    margin-bottom: 20px;
+                    font-size: clamp(1rem,2.5vw,2rem);
+
+
+                    }
+
+                    .reportbutton:hover {
+                     transform: translate(-0.05em, -0.05em);
+                     box-shadow: 0.15em 0.15em;
+                    }
+
+                    .reportbutton:active {
+                     transform: translate(0.05em, 0.05em);
+                     box-shadow: 0.05em 0.05em;
+                    }
+
+                    .ignorebutton {
+                     background: #9b9a9a;
+                     font-family: century gothic;
+                     padding: 0.6em 1.3em;
+                     font-weight: 700;
+                     font-size:1rem;
+                     border: 3px solid black;
+                     border-radius: 0.4em;
+                     box-shadow: 0.1em 0.1em;
+                     font-size: clamp(1rem,2.5vw,2rem);
+                     width: 250px;
+                     height: 60px;
+                                    
+                    }
+                    
+                    .ignorebutton:hover {
+                     transform: translate(-0.05em, -0.05em);
+                     box-shadow: 0.15em 0.15em;
+                    }
+                    
+                    .ignorebutton:active {
+                     transform: translate(0.05em, 0.05em);
+                     box-shadow: 0.05em 0.05em;
+                    }
 
 
 
@@ -838,8 +951,54 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
 
 
+                    /* The Modal (background) */
+                    .confirmreport {
+                              display: none; /* Hidden by default */
+                              position: fixed; /* Stay in place */
+                              z-index: 1; /* Sit on top */
+                              padding-top: 100px; /* Location of the box */
+                              left: 0;
+                              top: 0;
+                              width: 100%; /* Full width */
+                              height: 100%; /* Full height */
+                              overflow: auto; /* Enable scroll if needed */
+                              background-color: rgb(0,0,0); /* Fallback color */
+                              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                            }
+                            
+                            /* Modal Content */
+                            .confirmreportcontents {
+                              background-color: #fefefe;
+                              margin: auto;
+                              padding: 20px;
+                              border: 1px solid #888;
+                              width: 50%;
+                              height: auto;
+                              text-align: center;
+                           
+                            }
 
+                            .confirmreportcontents p {
+                                font-size: clamp(1rem,2.5vw,2rem);
+                            }
+                            
+                            /* The Close Button */
+                            .close {
+                              color: #aaaaaa;
+                              float: right;
+                              font-size: 28px;
+                              font-weight: bold;
+                          
+                            }
+                            
+                            .close:hover,
+                            .close:focus {
+                              color: #000;
+                              text-decoration: none;
+                              cursor: pointer;
+                            }
 
+                }
 
 
 
@@ -954,15 +1113,67 @@ body{ font-size: 1rem; overflow-x: hidden;}
 
                                         <div class="reportbutton2">
 
-                                            <button class="reportbutton" > <span style="color: white;">REPORT</span>
+                                            <button class="reportbutton" id="confirmreportbutton" > <span style="color: white;">REPORT</span>
                                             </button>
 
+                                            <div id="myModal" class="confirmreport">
+
+                                                <div  class="confirmreportcontents">
+                                                    <span class="close">&times;</span>
+                                                            <p>Please confirm your Police Report Submission! This will be Forwarded in El Salvador Police Department!</p>
+                                                            <button class="reportbutton" id="confirmed" style="width:50% ;"> <span style="color: white;">CONFIRM REPORT</span>
+                                                            </button>
+                                                </div>
+                                                
+                                            </div>
+                                            <script>
+                                                // Get the modal
+                                                    var modal = document.getElementById("myModal");
+                                                                                                
+                                                    // Get the button that opens the modal
+                                                    var btn = document.getElementById("confirmreportbutton");
+
+                                                    // Get the button that opens the modal
+                                                    var confirmed = document.getElementById("confirmed");
+                                                                                                
+                                                    // Get the <span> element that closes the modal
+                                                    var span = document.getElementsByClassName("close")[0];
+                                                    
+                                                    // When the user clicks the button, open the modal 
+                                                    btn.onclick = function() {
+                                                     
+                                                      modal.style.display = "block";
+                                                    }
+                                                    
+                                                    // When the user clicks on <span> (x), close the modal
+                                                    span.onclick = function() {
+                                                      modal.style.display = "none";
+                                                    }
+
+                                                    confirmed.onclick = function() {
+                                                      modal.style.display = "none";
+                                                    }
+
+                                                    
+                                                    // When the user clicks anywhere outside of the modal, close it
+                                                    window.onclick = function(event) {
+                                                      if (event.target == modal) {
+                                                        modal.style.display = "none";
+                                                      }
+                                                    }
+
+                                            </script>
+
+
+
+
+
                                         </div>
-                                        <div class="ignorebutton2">
-                                            <button class="ignorebutton" > <span>IGNORE</span>
+                                        <a href="/dashboard"><div class="ignorebutton2">
+                                            <button class="ignorebutton"> <span>IGNORE</span>
                                             </button>
                                         </div>
-
+                                    </a>
 
                                     </div>
 
