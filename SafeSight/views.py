@@ -77,7 +77,7 @@ def activateEmail(request, user):
 @user_not_authenticated
 def signup(request):
       if request.user.is_authenticated:
-          return redirect('/profile')
+          return redirect('/dashboard')
       if request.method == 'POST':
           form = CustomUserCreationForm(request.POST)
           if form.is_valid():
@@ -104,12 +104,15 @@ def signup(request):
 
 
 def home(request):
+    if request.user.is_authenticated:
+        return redirect('/dashboard')
+    else:
         return render(request, 'home.html')
 
 
 def signin(request):
     if request.user.is_authenticated:
-        return render(request, 'home.html')
+        return render(request, 'dashboard.html')
     if request.method == 'POST':
         username = request.POST['username'].lower()
         password = request.POST['password'].lower()
@@ -126,10 +129,6 @@ def signin(request):
         return render(request, 'login.html', {'form': form})
 
 
-def profile(request):
-    return render(request, 'profile.html')
-
-
 def signout(request):
     logout(request)
     return redirect('/signin')
@@ -139,13 +138,16 @@ def aboutus(request):
 
 @login_required
 def dashboard(request):
-
+    
     return render(request, 'dashboard.html')
 
+@login_required
 def reportcontents(request):
     return render(request, 'reportcontents.html')
 
 def forgotpass(request):
+    if request.user.is_authenticated:
+        return render(request, 'dashboard.html')
     return render(request, 'forgotpass.html') 
 
 
