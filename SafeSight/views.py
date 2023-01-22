@@ -8,7 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import HttpResponseRedirect , render
 from django.contrib.auth import forms  
 from django.contrib import messages  
-from .forms import CustomUserCreationForm , updateform
+from .forms import CustomUserCreationForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
@@ -18,12 +18,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 from .decorators import user_not_authenticated
 from .tokens import account_activation_token
-from .models import editupdaterecord
-
-
-from django.contrib.auth.models import User
-
-
+from .forms import UpdateNamesForm
 
 
 
@@ -53,12 +48,6 @@ def activate(request, uidb64, token):
 
 
 
-
-
-
-
-
-
 def activateEmail(request, user):
     mail_subject = "Activate your SafeSight Account."
     message = render_to_string("activate_account.html", {
@@ -81,11 +70,6 @@ def activateEmail(request, user):
 
 
 
-
-
-
-
-
 @user_not_authenticated
 def signup(request):
       if request.user.is_authenticated:
@@ -97,7 +81,9 @@ def signup(request):
               username = form.cleaned_data.get('username')
               email = form.cleaned_data.get('email')
               password = form.cleaned_data.get('password1')
-              user = authenticate(username=username, password=password, email=email)
+              address = form.cleaned_data.get('paddress')
+              phonenumber = form.cleaned_data.get('pphonenumber')
+              user = authenticate(username=username, password=password, email=email , address=address, phonenumber=phonenumber)
               user.is_active=False
               user.save()
               activateEmail(request,user)
@@ -122,6 +108,7 @@ def home(request):
         return render(request, 'home.html')
 
 
+
 def signin(request):
     if request.user.is_authenticated:
         return render(request, 'dashboard.html')
@@ -141,38 +128,42 @@ def signin(request):
         return render(request, 'login.html', {'form': form})
 
 
-def editprofile(request,user):
-    if request.user.is_authenticated:
-        return render(request, 'editprofile.html')
-
-        
-        
-def update(request):
-    if request.method == 'POST':
-        form = updateform(request.POST)
-        if form.is_valid():
-            user = form.save()
-            first_name = form.cleaned_data.get('first_name')
-            last_name = form.cleaned_data.get('last_name')
-            address = form.cleaned_data.get('address')
-            user = authenticate(request, first_name=first_name, last_name=last_name,address=address)
-            user.save()
-            return redirect('/profile')
 
 
 
+
+
+
+
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 @login_required
 def profile(request):
-    return render(request,'profile.html')
+    if request.method == 'POST':
+        form = UpdateNamesForm(request.POST)
+        if form.is_valid():
+            form.save(username=request.user.username)
+        return render(request, 'profile.html', {'form': form})
+    else:
+        form = UpdateNamesForm()
+    return render(request, 'profile.html', {'form': form})
 
-@login_required
-def editprofile(request):
-    return render(request,'editprofile.html')
 
-def displaydata(request):
-    results=editupdaterecord.objects.all()
-    return render(request,"profile.html",{"editupdaterecord":results})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -195,8 +186,19 @@ def aboutus(request):
 
 @login_required
 def dashboard(request):
-    
+      
+
     return render(request, 'dashboard.html')
+    
+
+    
+
+
+
+
+
+
+
 
 @login_required
 def reportcontents(request):
@@ -209,3 +211,5 @@ def forgotpass(request):
 
 
      
+
+

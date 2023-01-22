@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SafeSight',
+
    
 
 ]
@@ -154,3 +155,4 @@ EMAIL_USE_TLS = True
 PASSWORD_RESET_TIMEOUT = 14400
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

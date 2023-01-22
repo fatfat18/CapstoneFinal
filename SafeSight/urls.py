@@ -30,6 +30,8 @@ from . import views
 
 
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -41,8 +43,8 @@ urlpatterns = [
     path('reportcontents/',views.reportcontents, name='reportcontents'),
     path('forgotpass/',views.forgotpass, name='forgotpass'),
     path('profile/',views.profile, name='profile'),
-    path('editprofile/',views.editprofile, name='editprofile'),
-    path('update/<int:id>/', views.editprofile, name='update'),
+
+
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
  
     # url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 

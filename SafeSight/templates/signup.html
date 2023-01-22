@@ -15,13 +15,13 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}
             *,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}
             
     .container {
-          height: 100%;
+          height: 150vh;
           width: 100%;
           background: url("/static/img/signupback.jpg") repeat;
           object-fit: cover;
           display: flex;
           justify-content: center;
-          align-items: center;
+     
           text-align: center;
  
 
@@ -32,7 +32,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}
         
 
         .mainpage {
-          height: 100%;
+          height: auto;
           width: 40%;
           background: rgba(255,255,255,0);
           -webkit-backdrop-filter: blur(12px);
@@ -54,7 +54,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}
           justify-content:center;
           align-items:center;
           text-align:center;
-          height: 70%;
+          height: auto;
               
             }
 
@@ -430,7 +430,12 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}
 
                   <h2 style="font-family: century gothic; font-size: 40px; letter-spacing: 2px; color: red ; background-color: white; margin-left:20px; margin-right: 20px;">{{msg}}</h2>
 
-  
+
+
+
+
+
+   
                 <div class="signupcontent">
                   <form method="post" class="site-form">
                     {% csrf_token %}
@@ -454,7 +459,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}
                   
 
                  </div>
-              
+               -->
   
 
             </form>

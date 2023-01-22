@@ -3,7 +3,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm  
 from django.core.exceptions import ValidationError  
 from django.forms.fields import EmailField  
-from django.forms.forms import Form  
+from django.forms.forms import Form 
+from django.contrib.auth import get_user_model 
+
+
+
 
   
 class CustomUserCreationForm(UserCreationForm):  
@@ -11,6 +15,7 @@ class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(label='Email')  
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)  
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput) 
+
 
   
     def username_clean(self):  
@@ -34,42 +39,73 @@ class CustomUserCreationForm(UserCreationForm):
         if password1 and password2 and password1 != password2:  
             raise ValidationError("Passwords don't match!")  
         return password2  
-  
+
+
 
     def save(self, commit = True):  
         user = User.objects.create_user(  
             self.cleaned_data['username'],  
             self.cleaned_data['email'],  
             self.cleaned_data['password1'],
+
         )
         return user  
 
-    
 
-class updateform(CustomUserCreationForm):
-    first_name = forms.CharField(label='First Name', min_length=3, max_length=150)
-    last_name = forms.CharField(label='Last Name', min_length=3, max_length=150)
-    address = forms.CharField(label='Address', min_length=3, max_length=150)
-  
 
-  
-    def first_name_clean(self):  
-        first_name = self.cleaned_data['first_name'].lower()  
-        new = User.objects.filter(first_name = first_name)   
-        return first_name 
-    def last_name_clean(self):  
-        last_name = self.cleaned_data['last_name'].lower()  
-        new = User.objects.filter(last_name = last_name)   
-        return last_name 
-    def address_clean(self):  
-        address = self.cleaned_data['address'].lower()  
-        new = User.objects.filter(address = address)   
-        return address 
-    
-    def save(self, commit = True):  
-        user = User.objects.create_user(  
-            self.cleaned_data['first_name'],  
-            self.cleaned_data['lastname'],  
-            self.cleaned_data['address'],  
-        )
-        return user  
+
+
+
+
+
+
+from django.contrib.auth.models import User
+from django.db import models
+
+
+
+
+class UpdateNamesForm(forms.Form):
+
+    first_name = forms.CharField(max_length=150)
+    last_name = forms.CharField(max_length=150)
+    address = forms.CharField(max_length=150)
+    phonenumber = forms.IntegerField()
+
+
+
+    def save(self,username):
+        User = get_user_model()
+        user = User.objects.get(username=username)
+        user.address = self.cleaned_data['address']
+        user.phonenumber = self.cleaned_data['phonenumber']
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        user.save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+#from .models import user_details
+#
+#class UpdateUserDetailsForm(forms.ModelForm):
+#    class Meta:
+#        model = user_details
+#        fields = ['first_name', 'last_name', 'address', 'phonenumber']
+#
+#
+#        def save(self):
+#            self.address = self.cleaned_data['address']
+#            self.phonenumber = self.cleaned_data['phonenumber']
+#            self.first_name = self.cleaned_data['first_name']
+#            self.last_name = self.cleaned_data['last_name']
+#            self.save()
